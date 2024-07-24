@@ -11,16 +11,16 @@ namespace Blood_Donar
     {
         public static void ToggoleButton(Guna2TextBox textBox, Guna2Button button)
         {
-            if (textBox.UseSystemPasswordChar)
+            if (textBox.PasswordChar != '●')
             {
-                // textBox.PasswordChar = '*';
-                textBox.UseSystemPasswordChar = false;
+                textBox.PasswordChar = '●';
+                // textBox.UseSystemPasswordChar = false;
                 button.Image = Properties.Resources.hide;
                 return;
             }
 
-            // textBox.PasswordChar = string.Clear();
-            textBox.UseSystemPasswordChar = true;
+            textBox.PasswordChar = '\0';
+            // textBox.UseSystemPasswordChar = true;
             button.Image = Properties.Resources.show;
         }
 

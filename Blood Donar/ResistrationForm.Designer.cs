@@ -198,7 +198,7 @@
             this.password_tb.SelectedText = "";
             this.password_tb.Size = new System.Drawing.Size(237, 36);
             this.password_tb.TabIndex = 1;
-            this.password_tb.UseSystemPasswordChar = true;
+            this.password_tb.TextChanged += new System.EventHandler(this.password_tb_TextChanged);
             // 
             // confirm_password_tb
             // 
@@ -220,7 +220,6 @@
             this.confirm_password_tb.SelectedText = "";
             this.confirm_password_tb.Size = new System.Drawing.Size(237, 36);
             this.confirm_password_tb.TabIndex = 3;
-            this.confirm_password_tb.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel5
             // 
@@ -325,7 +324,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 885);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(309, 24);
+            this.guna2Panel1.Size = new System.Drawing.Size(385, 24);
             this.guna2Panel1.TabIndex = 6;
             // 
             // name_warning_label
@@ -522,7 +521,7 @@
             this.confirm_password_toggle_btn.Location = new System.Drawing.Point(262, 766);
             this.confirm_password_toggle_btn.Margin = new System.Windows.Forms.Padding(0);
             this.confirm_password_toggle_btn.Name = "confirm_password_toggle_btn";
-            this.confirm_password_toggle_btn.Size = new System.Drawing.Size(29, 34);
+            this.confirm_password_toggle_btn.Size = new System.Drawing.Size(36, 34);
             this.confirm_password_toggle_btn.TabIndex = 26;
             this.confirm_password_toggle_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.confirm_password_toggle_btn.UseTransparentBackground = true;
@@ -586,7 +585,7 @@
             this.Controls.Add(this.name);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "ResistrationForm";
-            this.Size = new System.Drawing.Size(309, 450);
+            this.Size = new System.Drawing.Size(385, 433);
             this.Load += new System.EventHandler(this.ResistrationForm_Load);
             this.gender_panel.ResumeLayout(false);
             this.gender_panel.PerformLayout();

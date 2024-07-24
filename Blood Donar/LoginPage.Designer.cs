@@ -55,7 +55,7 @@
             this.password_tb.Location = new System.Drawing.Point(52, 223);
             this.password_tb.Name = "password_tb";
             this.password_tb.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
-            this.password_tb.PasswordChar = '\0';
+            this.password_tb.PasswordChar = '●';
             this.password_tb.PlaceholderForeColor = System.Drawing.Color.RosyBrown;
             this.password_tb.PlaceholderText = "Password";
             this.password_tb.SelectedText = "";
@@ -141,10 +141,10 @@
             this.password_toggle_btn.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.password_toggle_btn.ForeColor = System.Drawing.Color.Transparent;
             this.password_toggle_btn.Image = global::Blood_Donar.Properties.Resources.show;
-            this.password_toggle_btn.Location = new System.Drawing.Point(312, 224);
+            this.password_toggle_btn.Location = new System.Drawing.Point(312, 223);
             this.password_toggle_btn.Margin = new System.Windows.Forms.Padding(0);
             this.password_toggle_btn.Name = "password_toggle_btn";
-            this.password_toggle_btn.Size = new System.Drawing.Size(29, 34);
+            this.password_toggle_btn.Size = new System.Drawing.Size(34, 36);
             this.password_toggle_btn.TabIndex = 27;
             this.password_toggle_btn.TextOffset = new System.Drawing.Point(0, 20);
             this.password_toggle_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;

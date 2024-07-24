@@ -232,5 +232,10 @@ namespace Blood_Donar
         {
             Equipment.ToggoleButton(confirm_password_tb, confirm_password_toggle_btn);
         }
+
+        private void password_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
