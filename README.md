@@ -83,5 +83,5 @@ Contributions are welcome! Please submit a pull request or open an issue to disc
     This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
-    For any inquiries or support, please contact:Email: basharulalam6@gmail.com
+    For any inquiries or support, please contact: Email: basharulalam6@gmail.com
     Thank you for using Blood Donor! Your contributions and feedback are highly appreciated.
