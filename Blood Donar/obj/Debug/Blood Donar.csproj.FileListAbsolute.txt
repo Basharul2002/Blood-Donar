@@ -1,0 +1,23 @@
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\bin\Debug\Blood Donar.exe.config
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\bin\Debug\Blood Donar.exe
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\bin\Debug\Blood Donar.pdb
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood Donar.csproj.AssemblyReference.cache
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.HomePage.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.Properties.Resources.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood Donar.csproj.GenerateResource.cache
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood Donar.csproj.CoreCompileInputs.cache
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood Do.66C3F428.Up2Date
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood Donar.exe
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood Donar.pdb
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.LoginInitialForm.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.ResistrationForm.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.DashBoardForm.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.DonarInformation.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.Donar.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.LoginPage.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.ResistrationInitialPage.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.Profile.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.Verify.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.Change.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.RecoverPassword.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.UserProfile.resources
