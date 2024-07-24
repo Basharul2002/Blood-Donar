@@ -11,8 +11,9 @@ Blood Donor is a desktop application developed in C# using the .NET framework, a
 ### Blood Donor List
 - Logged-in users can view a list of available blood donors.
 - Clicking on a donor from the list will display their profile with the following details:
-  - Mobile Number
+  - Name
   - Email
+  - Mobile Number
   - City
   - Gender
   - Blood Group
