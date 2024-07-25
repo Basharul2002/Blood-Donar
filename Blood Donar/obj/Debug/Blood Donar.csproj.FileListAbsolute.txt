@@ -21,3 +21,4 @@ D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.V
 D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.Change.resources
 D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.RecoverPassword.resources
 D:\University\Github\Blood Donar\Blood Donar\Blood Donar\obj\Debug\Blood_Donar.UserProfile.resources
+D:\University\Github\Blood Donar\Blood Donar\Blood Donar\bin\Debug\Guna.UI2.dll

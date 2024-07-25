@@ -12,6 +12,7 @@ namespace Blood_Donar
 {
     public partial class Profile : UserControl
     {
+        private int id;
         private string name, email, phoneNumber;
         private bool emailVerify = false, phoneNumberVerify = false;
         public Profile()
@@ -20,17 +21,18 @@ namespace Blood_Donar
         }
 
 
-        public Profile(bool personalProfile, string email) : this() 
+        public Profile(bool personalProfile, int id) : this() 
         {
             if (personalProfile)
                 PersonalProfileDataLoad();
             else
                 PersonProfileDataLoad();
 
-            DataShow(email);
+            DataBaseDataShow(id);
+            // DataShow(email);
 
             // After all data collected from database
-            this.email = email;
+            this.id = id;
             name = name_tb.Text;
             phoneNumber = phone_number_tb.Text;
         }
@@ -72,39 +74,43 @@ namespace Blood_Donar
             others_btn2.Enabled = flag;
         }
 
-        private void DataBaseDataShow(string email)
+        private void DataBaseDataShow(int id)
         {
+           // MessageBox.Show($"Email: {email}");
             DataBase dataBase = new DataBase();
-            string query = $"SELECT * FROM [User Information] WHEHE [Email] == {email}";
+            string query = $"SELECT * FROM [User Information] WHERE [ID] = {id}";
             string error;
             DataTable dataTable = dataBase.DataAccess(query, out error);
 
-            if (string.IsNullOrEmpty(error))
+            if (!string.IsNullOrEmpty(error))
             {
-                MessageBox.Show($"Class: Profile Funcion: DataBaseDataShow \nException: {error}");
+                MessageBox.Show($"Class: Profile Function: DataBaseDataShow \nException: {error}");
                 return;
             }
 
-            if (dataTable.Rows.Count < 0)
+            if (dataTable == null )
+            {
+                MessageBox.Show("No Data Found", "NULL");
+                return;
+            }
+
+            if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("No Data Found");
                 return;
             }
 
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                name_tb.Text = dataTable.Columns["Name"].ToString();
-                email_tb.Text = dataTable.Columns["Email"].ToString();
-                phone_number_tb.Text = dataTable.Columns["Phone Number"].ToString();
-                city_tb.Text = dataTable.Columns["City"].ToString(); 
-                blood_group_cb.Text = dataTable.Columns["Blood Group"].ToString();
-                password_tb.Text = dataTable.Columns["Password"].ToString();
 
-                if (dataTable.Columns["Email Verified"].ToString() == "1")
-                    emailVerify = true;
-                if (dataTable.Columns["Phone Number Verified"].ToString() == "1")
-                    phoneNumberVerify = true;
-            }
+            name_tb.Text = dataTable.Rows[0]["Name"].ToString();
+            email_tb.Text = dataTable.Rows[0]["Email"].ToString();
+            phone_number_tb.Text = dataTable.Rows[0]["Phone Number"].ToString();
+            city_tb.Text = dataTable.Rows[0]["City"].ToString();
+            password_tb.Text = dataTable.Rows[0]["Password"].ToString();
+            Equipment.GenderSelection(Convert.ToInt32(dataTable.Rows[0]["Gender"]), male_btn1, female_btn1, others_btn1);
+            Equipment.GenderSelection(Convert.ToInt32(dataTable.Rows[0]["Gender"]), male_btn2, female_btn2, others_btn2);
+            blood_group_cb.SelectedIndex = Convert.ToInt32(dataTable.Rows[0]["Blood Group"]);
+            // emailVerify = row["Email Verified"].ToString() == "1";
+            // phoneNumberVerify = row["Phone Number Verified"].ToString() == "1";
         }
 
 

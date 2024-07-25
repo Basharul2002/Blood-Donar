@@ -18,10 +18,10 @@ namespace Blood_Donar
         }
 
 
-        public DonarInformation(string name, string email, string phoneNumber, string city, string bloodGroup) : this()
+        public DonarInformation(int id, string name, string email, string phoneNumber, string city, string bloodGroup) : this()
         {
             DataShow(name, email, phoneNumber, city, bloodGroup);
-            this.Tag = email;
+            this.Tag = id;
         }
 
         private void DataShow(string name, string email, string phoneNumber, string city, string bloodGroup)
@@ -30,7 +30,7 @@ namespace Blood_Donar
             email_label.Text = $"<b>EMAIL : </b>{email}";
             phone_number_label.Text = $"<b>PHONE NUMBER : </b>{phoneNumber}";
             city_label.Text = $"<b>CITY : </b>{city}";
-            blood_group_label.Text = $"<b>Blood Group: </b>{bloodGroup}";
+            blood_group_label.Text = $"<b>Blood Group: </b>{Equipment.BloodGroupSelection(bloodGroup)}";
         }
 
         private void profile_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Blood_Donar
             if (!DashBoardForm.Instance.panelContainer.Controls.ContainsKey("Profile"))
             {
                 DashBoardForm.Instance.panelContainer.Controls.Clear(); 
-                Profile profile = new Profile(false, this.Tag.ToString());
+                Profile profile = new Profile(false, Convert.ToInt32(this.Tag));
                 profile.Dock = DockStyle.Fill;
                 DashBoardForm.Instance.panelContainer.Controls.Add(profile);
             }            

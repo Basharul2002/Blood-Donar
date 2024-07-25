@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\University\\Github\\Blood Donar\\Blood Donar\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|D:\\University\\Github\\Blood Donar\\Blood Donar\\blood donar\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|solutionrelative:blood donar\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|d:\\university\\github\\blood donar\\blood donar\\blood donar\\resistrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|solutionrelative:blood donar\\resistrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|D:\\University\\Github\\Blood Donar\\Blood Donar\\blood donar\\resistrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|solutionrelative:blood donar\\resistrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|D:\\University\\Github\\Blood Donar\\Blood Donar\\blood donar\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|solutionrelative:blood donar\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|D:\\University\\Github\\Blood Donar\\Blood Donar\\blood donar\\resistrationinitialpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -51,7 +51,7 @@
       "RelativeMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|solutionrelative:blood donar\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|d:\\university\\github\\blood donar\\blood donar\\blood donar\\recoverpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|D:\\University\\Github\\Blood Donar\\Blood Donar\\blood donar\\recoverpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7DA2480-D368-43C5-BF39-084493560E7C}|Blood Donar\\Blood Donar.csproj|solutionrelative:blood donar\\recoverpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -154,11 +154,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LoginPage.cs [Design]",
               "DocumentMoniker": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\LoginPage.cs",
               "RelativeDocumentMoniker": "Blood Donar\\LoginPage.cs",
@@ -166,8 +166,7 @@
               "RelativeToolTip": "Blood Donar\\LoginPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T05:56:58.329Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -180,8 +179,7 @@
               "ViewState": "AQIAAAYAAAAAAAAAAAAqwCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T19:54:00.203Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -194,8 +192,7 @@
               "ViewState": "AQIAAKwAAAAAAAAAAADwv8EAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T19:35:32.857Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -207,8 +204,7 @@
               "RelativeToolTip": "Blood Donar\\RecoverPassword.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T17:23:28.627Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -220,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ResistrationForm.cs [Design]",
               "DocumentMoniker": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\ResistrationForm.cs",
               "RelativeDocumentMoniker": "Blood Donar\\ResistrationForm.cs",
@@ -240,8 +236,7 @@
               "RelativeToolTip": "Blood Donar\\ResistrationForm.cs",
               "ViewState": "AQIAANkAAAAAAAAAAAAqwPEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T07:43:37.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T07:43:37.837Z"
             },
             {
               "$type": "Document",
@@ -252,8 +247,7 @@
               "ToolTip": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\HomePage.cs [Design]",
               "RelativeToolTip": "Blood Donar\\HomePage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T05:56:27.277Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-22T05:56:27.277Z"
             },
             {
               "$type": "Document",
@@ -265,8 +259,7 @@
               "RelativeToolTip": "Blood Donar\\Equipment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T11:53:12.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T11:53:12.994Z"
             },
             {
               "$type": "Document",
@@ -277,8 +270,7 @@
               "ToolTip": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\ResistrationInitialPage.cs [Design]",
               "RelativeToolTip": "Blood Donar\\ResistrationInitialPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T07:11:01.303Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-22T07:11:01.303Z"
             },
             {
               "$type": "Document",
@@ -289,8 +281,7 @@
               "ToolTip": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\Change.cs [Design]",
               "RelativeToolTip": "Blood Donar\\Change.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T15:04:54.663Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-22T15:04:54.663Z"
             },
             {
               "$type": "Document",
@@ -301,8 +292,7 @@
               "ToolTip": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\Profile.cs [Design]",
               "RelativeToolTip": "Blood Donar\\Profile.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T06:48:40.001Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-22T06:48:40.001Z"
             },
             {
               "$type": "Document",
@@ -314,8 +304,7 @@
               "RelativeToolTip": "Blood Donar\\LoginPage.cs",
               "ViewState": "AQIAAFcAAAAAAAAAAAAAwGoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T05:57:00.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T05:57:00.271Z"
             },
             {
               "$type": "Document",
@@ -350,8 +339,7 @@
               "RelativeToolTip": "Blood Donar\\RecoverPassword.Designer.cs",
               "ViewState": "AQIAABICAAAAAAAAAAAiwCkCAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T06:07:16.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T06:07:16.723Z"
             },
             {
               "$type": "Document",
@@ -395,8 +383,7 @@
               "ToolTip": "D:\\University\\Github\\Blood Donar\\Blood Donar\\Blood Donar\\UserProfile.cs [Design]",
               "RelativeToolTip": "Blood Donar\\UserProfile.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T19:22:02.823Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-22T19:22:02.823Z"
             },
             {
               "$type": "Document",
@@ -419,8 +406,7 @@
               "RelativeToolTip": "Blood Donar\\Change.Designer.cs",
               "ViewState": "AQIAAEIAAAAAAAAAAAAiwFkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T15:26:42.819Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T15:26:42.819Z"
             },
             {
               "$type": "Document",
@@ -444,8 +430,7 @@
               "RelativeToolTip": "Blood Donar\\Change.cs",
               "ViewState": "AQIAAGsAAAAAAAAAAADwv3UAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T15:25:18.039Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T15:25:18.039Z"
             },
             {
               "$type": "Document",
@@ -505,8 +490,7 @@
               "RelativeToolTip": "Blood Donar\\UserProfile.Designer.cs",
               "ViewState": "AQIAACcAAAAAAAAAAAAIwEgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T20:08:50.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T20:08:50.577Z"
             },
             {
               "$type": "Document",
@@ -530,8 +514,7 @@
               "RelativeToolTip": "Blood Donar\\Profile.cs",
               "ViewState": "AQIAAJAAAAAAAAAAAAAAwJ8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T06:54:31.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T06:54:31.935Z"
             },
             {
               "$type": "Document",
@@ -567,8 +550,7 @@
               "RelativeToolTip": "Blood Donar\\ResistrationForm.Designer.cs",
               "ViewState": "AQIAAL8BAAAAAAAAAAAqwNcBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T11:36:27.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T11:36:27.766Z"
             },
             {
               "$type": "Document",
@@ -592,8 +574,7 @@
               "RelativeToolTip": "Blood Donar\\Profile.Designer.cs",
               "ViewState": "AQIAAOwAAAAAAAAAAAAYwAEBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T09:10:22.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T09:10:22.473Z"
             },
             {
               "$type": "Document",
@@ -605,8 +586,7 @@
               "RelativeToolTip": "Blood Donar\\HomePage.cs",
               "ViewState": "AQIAACsAAAAAAAAAAAAUwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T05:56:39.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T05:56:39.632Z"
             }
           ]
         }

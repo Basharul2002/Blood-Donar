@@ -13,7 +13,7 @@ namespace Blood_Donar
 {
     public partial class DashBoardForm : Form
     {
-        public string email;
+        public int id;
         static DashBoardForm obj;
         
         public DashBoardForm()
@@ -21,9 +21,9 @@ namespace Blood_Donar
             InitializeComponent();
         }
 
-        public DashBoardForm(string email) : this()
+        public DashBoardForm(int id) : this()
         {
-            this.email = email;
+            this.id = id;
         }
 
         public static DashBoardForm Instance
@@ -58,7 +58,7 @@ namespace Blood_Donar
         private void donar_btn_Click(object sender, EventArgs e)
         {
             Instance.panelContainer.Controls.Clear();
-            Donar donar = new Donar(this.email);
+            Donar donar = new Donar(this.id);
             donar.Dock = DockStyle.Fill;
             Instance.panelContainer.Controls.Add(donar);   
         }
@@ -67,7 +67,7 @@ namespace Blood_Donar
         private void profile_btn_Click(object sender, EventArgs e)
         {
             Instance.panelContainer.Controls.Clear();
-            Profile profile = new Profile(true, this.email);
+            Profile profile = new Profile(true, this.id);
             profile.Dock = DockStyle.Fill;
             Instance.panelContainer.Controls.Add(profile);
         }

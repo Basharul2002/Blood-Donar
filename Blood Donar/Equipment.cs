@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Blood_Donar
 {
@@ -24,6 +25,39 @@ namespace Blood_Donar
             button.Image = Properties.Resources.show;
         }
 
+        public static void GenderSelection(int gender, RadioButton maleRadioButton, RadioButton femaleRadioButton, RadioButton othersRadioButton)
+        {
+            if (gender == 1)
+                maleRadioButton.Checked = true;
+            else if (gender == 2)
+                femaleRadioButton.Checked = true;
+            else if (gender == 3)
+                othersRadioButton.Checked = true;
+        }
+
+        public static string BloodGroupSelection(string bloodGroup)
+        {
+            if (bloodGroup == "1")
+                return "A+";
+            else if (bloodGroup == "2")
+                return "A-";
+            else if (bloodGroup == "3")
+                return "B+";
+            else if (bloodGroup == "4")
+                return "B-";
+            else if (bloodGroup == "5")
+                return "AB+";
+            else if (bloodGroup == "6")
+                return "AB-";
+            else if (bloodGroup == "7")
+                return "O+";
+            else if (bloodGroup == "8")
+                return "O-";
+            else if (bloodGroup == "9")
+                return "Golden Blood";
+            else
+                return "Nothing";
+        }
 
 
 

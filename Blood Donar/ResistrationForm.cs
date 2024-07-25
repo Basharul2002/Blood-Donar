@@ -136,11 +136,11 @@ namespace Blood_Donar
             DataTable dataTable;
 
             // Here check have any account input email
-            query = $"SELECT TOP 1 FROM [User Information] WHERE [Email] = {email_tb.Text}";
+            query = $"SELECT TOP 1 * FROM [User Information] WHERE [Email] = '{email_tb.Text}'";
             dataTable = dataBase.DataAccess(query, out error);
-            if (!string.IsNullOrEmpty(query))
+            if (!string.IsNullOrEmpty(error))
             {
-                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore \nError: {error}", "Email");
+                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore 1 \nError: {error}", "Email");
                 return;
             }
 
@@ -154,11 +154,11 @@ namespace Blood_Donar
             
 
             // Check the phone number is register or not
-            query = $"SELECT TOP 1 FROM [User Information] WHERE [Phone Number] = {phone_number_tb.Text}";
+            query = $"SELECT TOP 1 * FROM [User Information] WHERE [Phone Number] = '{phone_number_tb.Text}'";
             dataTable = dataBase.DataAccess(query, out error);
-            if (!string.IsNullOrEmpty(query))
+            if (!string.IsNullOrEmpty(error))
             {
-                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore \nError: {error}", "Phone Number");
+                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore 2 \nError: {error}", "Phone Number");
                 return;
             }
 
@@ -171,8 +171,18 @@ namespace Blood_Donar
             }
 
             // Here register the information as a new account
-            query = $@"INSERT INTO [User Information] (Name, Email, [Phone Number], [Blood Group], City, Gender, Password
-                              VALUES({name_tb.Text}, {email_tb.Text}, {phone_number_tb.Text}, {BloodGroup()}, {city_tb.Text}, {Gender()}, {password_tb.Text}";
+            query = $@"INSERT INTO [User Information] (Name, Email, [Phone Number], [Blood Group], City, Gender, Password)
+                              VALUES('{name_tb.Text}', '{email_tb.Text}', '{phone_number_tb.Text}', {BloodGroup()}, '{city_tb.Text}', {Gender()}, '{password_tb.Text}')";
+
+            dataTable = dataBase.DataAccess(query, out error);
+
+            if (!string.IsNullOrEmpty(error))
+            {
+                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore 3 \nError: {error}", "Data Insert");
+                return;
+            }
+
+
 
             if (!HomePage.Instance.leftPanelContainer.Controls.ContainsKey("LoginPage"))
             {
@@ -192,23 +202,9 @@ namespace Blood_Donar
         }
 
         private int BloodGroup()
-        {  
-            switch (blood_group_cb.SelectedIndex)
-            {
-                case 1:
-                    return 1;
-                case 2:
-                    return 2;
-                case 3:
-                    return 3;  
-                case 4:
-                    return 4;  
-                default:
-                    return -1;
-                    
-            }
-
-
+        {
+            return (blood_group_cb.SelectedIndex);
+            
         }
 
         private void ResistrationForm_Load(object sender, EventArgs e)

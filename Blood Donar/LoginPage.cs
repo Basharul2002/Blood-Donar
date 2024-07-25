@@ -25,9 +25,9 @@ namespace Blood_Donar
             this.homePage = homePage;
         }
 
-        private void Login(string email, string passweord)
+        private void Login(string email, string password)
         {
-            string query = "SELECT TOP 1 FROM [User Login Information]";
+            string query = $"SELECT TOP  1  * FROM [User Information] WHERE [Email] = '{email}' AND [Password] = '{password}'";
 
             DataBase dataBase = new DataBase();
             string error;
@@ -43,7 +43,7 @@ namespace Blood_Donar
 
             // If no data found in database based on email and password
             // So, user requst is not valid for next 
-            if (dataTable.Rows.Count > 0)
+            if (dataTable.Rows.Count <= 0)
             {
                 warning_label.Text = "Invalid email or password";
                 warning_label.Visible = true;
@@ -53,7 +53,7 @@ namespace Blood_Donar
             // Email and Password is matched with database data
             // So user is valid for access next page
             homePage.Hide();
-            DashBoardForm dashBoard = new DashBoardForm();
+            DashBoardForm dashBoard = new DashBoardForm(Convert.ToInt32(dataTable.Rows[0]["ID"]));
             dashBoard.Show();
 
         }
@@ -82,6 +82,9 @@ namespace Blood_Donar
                 return;
             }
 
+            Login(email_tb.Text, password_tb.Text);
+
+            /*
             bool flag = false;
 
             List<Data> allData = Manager.DonarInformationManager();
@@ -98,11 +101,12 @@ namespace Blood_Donar
                 warning_label.Visible = true;
                 return;
             }
-
+            
 
             homePage.Hide();
             DashBoardForm dashBoard = new DashBoardForm(email_tb.Text);
             dashBoard.Show();
+            */
         }
 
         private void password_toggle_btn_Click(object sender, EventArgs e)
