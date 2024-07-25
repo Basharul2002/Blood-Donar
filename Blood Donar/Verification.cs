@@ -19,7 +19,7 @@ namespace Blood_Donar
             string senderEmail = "basharulalamm@gmail.com"; // Replace with your sender email address
             string senderPassword = "xvoawtmtomxzuqio"; // Replace with your sender email password
 
-            string subject = "Password Reset OTP Code - VOVO";
+            string subject = "Password Reset OTP Code - Blood Donar";
             string body = @"<!DOCTYPE html>
                             <html lang='en'>
                             <head>
@@ -67,7 +67,7 @@ namespace Blood_Donar
                               <div class='email-content'>
                                 <div class='email-heading'>Dear " + name + @",</div>
                                 <div class='email-text'>
-                                    We have received a request to reset your password for your [Your Website/App Name] account. To proceed with the password reset, please use the following One-Time Password (OTP) code within the next 2 minutes:                                  <br><br>
+                                    We have received a request to reset your password for your Blood Donar account. To proceed with the password reset, please use the following One-Time Password (OTP) code within the next 2 minutes:                                  <br><br>
                                   OTP Code: " + otp + @"
                                   <br><br>
                                   Please enter this OTP code on the password reset page to complete the process. If you didn't request this password reset or if you believe this is a mistake, please ignore this email and take necessary actions to secure your account.
@@ -77,7 +77,7 @@ namespace Blood_Donar
                                 <div class='email-footer'>
                                   If you need further assistance or have any questions, feel free to contact our support team at <a href='mailto:basharulalamm@gmail.com'> basharulalamm@gmail.com</a> or <a href='tel:+01813890622'>+8801 81389 0622</a>.
                                   <br><br>
-                                  Thank you for using [Platform/Service Name].
+                                  Thank you for using Blood Donar.
                                   <br>
                                   <div class='email-footer'>Best regards,<br>Blood Donar</div>
                                 </div>

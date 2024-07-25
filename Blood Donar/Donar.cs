@@ -60,7 +60,7 @@ namespace Blood_Donar
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                donarInformation = new DonarInformation(id: Convert.ToInt32(dataTable.Rows[i]["ID"]),name: dataTable.Rows[i]["Name"].ToString(), email: dataTable.Rows[i]["Email"].ToString(), phoneNumber: dataTable.Rows[i]["Phone Number"].ToString(), city: dataTable.Rows[i]["City"].ToString(), bloodGroup: dataTable.Rows[i]["Blood Group"].ToString());
+                donarInformation = new DonarInformation(id: Convert.ToInt32(dataTable.Rows[i]["ID"]),name: dataTable.Rows[i]["Name"].ToString(), email: dataTable.Rows[i]["Email"].ToString(), phoneNumber: dataTable.Rows[i]["Phone Number"].ToString(), city: dataTable.Rows[i]["City"].ToString(), bloodGroup: Convert.ToInt32(dataTable.Rows[i]["Blood Group"]), gender: Convert.ToInt32(dataTable.Rows[i]["Gender"]));
                 result_panel.Controls.Add(donarInformation);
             }
         }
@@ -103,7 +103,7 @@ namespace Blood_Donar
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                donarInformation = new DonarInformation(id: Convert.ToInt32(dataTable.Rows[i]["ID"]), name: dataTable.Rows[i]["Name"].ToString(), email: dataTable.Rows[i]["Email"].ToString(), phoneNumber: dataTable.Rows[i]["Phone Number"].ToString(), city: dataTable.Rows[i]["Phone Number"].ToString(), bloodGroup: dataTable.Rows[i]["Blood Group"].ToString());
+                donarInformation = new DonarInformation(id: Convert.ToInt32(dataTable.Rows[i]["ID"]), name: dataTable.Rows[i]["Name"].ToString(), email: dataTable.Rows[i]["Email"].ToString(), phoneNumber: dataTable.Rows[i]["Phone Number"].ToString(), city: dataTable.Rows[i]["Phone Number"].ToString(), bloodGroup: Convert.ToInt32(dataTable.Rows[i]["Blood Group"]), gender: Convert.ToInt32(dataTable.Rows[i]["Gender"]));
                 result_panel.Controls.Add(donarInformation);
             }
         }

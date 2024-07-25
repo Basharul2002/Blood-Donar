@@ -12,8 +12,8 @@ namespace Blood_Donar
 {
     public partial class Profile : UserControl
     {
-        private int id;
-        private string name, email, phoneNumber;
+        private int id, bloodGroup, gender;
+        private string name, email, phoneNumber, city, password;
         private bool emailVerify = false, phoneNumberVerify = false;
         public Profile()
         {
@@ -21,12 +21,20 @@ namespace Blood_Donar
         }
 
 
-        public Profile(bool personalProfile, int id) : this() 
+        public Profile(bool personalProfile, int id, string name = null, string email = null, string phoneNumber = null, string city = null, int bloodGroup = 0, int gender = 0) : this()
         {
+            this.id = id;
+            this.name = name;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+            this.city = city;
+            this.gender = gender;
+            this.bloodGroup = bloodGroup;
+
             if (personalProfile)
                 PersonalProfileDataLoad();
             else
-                PersonProfileDataLoad();
+                DonarProfileDataLoad();
 
             DataBaseDataShow(id);
             // DataShow(email);
@@ -40,43 +48,83 @@ namespace Blood_Donar
 
         private void PersonalProfileDataLoad()
         {
-            password_label.Visible = true;
-            name_tb.Visible = true;
-            back_btn.Location = new Point(185, 420);
-            gender1.Visible = true;
-            gender2.Visible = false;
-            Editable(true);
+            user_profile_panel.Visible = true;
+            donar_profile_panel.Visible = false;
+
         }
 
-        private void PersonProfileDataLoad()
+        private void DonarProfileDataLoad()
         {
-            password_label.Visible = false;
-            password_tb.Visible = false;
-            back_btn.Location = new Point(185, 345);
-            gender1.Visible = false;
-            gender2.Visible = true;
-            Editable(false);
+            MessageBox.Show($"Gender: {this.gender}");
+            user_profile_panel.Visible = false;
+            donar_profile_panel.Visible = true;
+
+            name_label.Text = $"Name: {this.name}";
+            email_label.Text = $"Email: {this.email}";
+            phone_number_label.Text = $"Phone Number: {this.phoneNumber}";
+            blood_group_label.Text = $"Blood Group: {Equipment.BloodGroupSelection(this.bloodGroup.ToString())}";
+            city_label.Text = $"City: {this.city}";
+            gender_label.Text = $"Gender: {Equipment.GenderSelection(this.gender)}";
         }
 
-        private void Editable(bool flag)
+        private void name_tb_TextChanged(object sender, EventArgs e)
         {
-            name_tb.Enabled = flag;
-            name_tb.ReadOnly = flag;
-            email_tb.Enabled = flag;
-            email_tb.ReadOnly = flag;
-            phone_number_tb.Enabled = flag;
-            phone_number_tb.ReadOnly = flag;
-            city_tb.Enabled = flag;
-            city_tb.ReadOnly = flag;
-            blood_group_cb.Enabled = flag;
-            male_btn2.Enabled = flag;
-            female_btn2 .Enabled = flag;
-            others_btn2.Enabled = flag;
+            if (string.IsNullOrWhiteSpace(name_tb.Text) || name_tb.Text == this.Name)
+            {
+                update_btn.Enabled = false;
+                return;
+            }
+
+            update_btn.Enabled = true;
+        }
+
+        private void city_tb_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(city_tb.Text) || city_tb.Text == this.Name)
+            {
+                update_btn.Enabled = false;
+                return;
+            }
+
+            update_btn.Enabled = true;
+        }
+
+        private void male_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gender == 1)
+            {
+                update_btn.Enabled = false;
+                return;
+            }
+
+            update_btn.Enabled = true;
+        }
+
+        private void female_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gender == 2)
+            {
+                update_btn.Enabled = false;
+                return;
+            }
+
+            update_btn.Enabled = true;
+        }
+
+        private void others_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gender == 3)
+            {
+                update_btn.Enabled = false;
+                return;
+            }
+
+            update_btn.Enabled = true;
         }
 
         private void DataBaseDataShow(int id)
         {
-           // MessageBox.Show($"Email: {email}");
+            // MessageBox.Show($"Email: {email}");
             DataBase dataBase = new DataBase();
             string query = $"SELECT * FROM [User Information] WHERE [ID] = {id}";
             string error;
@@ -88,7 +136,7 @@ namespace Blood_Donar
                 return;
             }
 
-            if (dataTable == null )
+            if (dataTable == null)
             {
                 MessageBox.Show("No Data Found", "NULL");
                 return;
@@ -101,36 +149,19 @@ namespace Blood_Donar
             }
 
 
-            name_tb.Text = dataTable.Rows[0]["Name"].ToString();
-            email_tb.Text = dataTable.Rows[0]["Email"].ToString();
-            phone_number_tb.Text = dataTable.Rows[0]["Phone Number"].ToString();
-            city_tb.Text = dataTable.Rows[0]["City"].ToString();
-            password_tb.Text = dataTable.Rows[0]["Password"].ToString();
-            Equipment.GenderSelection(Convert.ToInt32(dataTable.Rows[0]["Gender"]), male_btn1, female_btn1, others_btn1);
-            Equipment.GenderSelection(Convert.ToInt32(dataTable.Rows[0]["Gender"]), male_btn2, female_btn2, others_btn2);
-            blood_group_cb.SelectedIndex = Convert.ToInt32(dataTable.Rows[0]["Blood Group"]);
+            this.name = name_tb.Text = dataTable.Rows[0]["Name"].ToString();
+            this.email = email_tb.Text = dataTable.Rows[0]["Email"].ToString();
+            this.phoneNumber = phone_number_tb.Text = dataTable.Rows[0]["Phone Number"].ToString();
+            this.city = city_tb.Text = dataTable.Rows[0]["City"].ToString();
+            this.password = password_tb.Text = dataTable.Rows[0]["Password"].ToString();
+            this.gender = Convert.ToInt32(dataTable.Rows[0]["Gender"]);
+            Equipment.GenderSelection(gender, male_btn, female_btn, others_btn);
+            this.gender = blood_group_cb.SelectedIndex = Convert.ToInt32(dataTable.Rows[0]["Blood Group"]);
             // emailVerify = row["Email Verified"].ToString() == "1";
             // phoneNumberVerify = row["Phone Number Verified"].ToString() == "1";
         }
 
 
-        private void DataShow(string email)
-        {
-            List<Data> allData = Manager.DonarInformationManager();
-            foreach (Data data in allData)
-            {
-                if (data.Email == email)
-                {
-                    name_tb.Text = data.Name;
-                    email_tb.Text = data.Email;
-                    phone_number_tb.Text = data.PhoneNumber;
-                    blood_group_cb.Text = data.BloodGroup;
-                    city_tb.Text = data.City;
-                    password_tb.Text = data.Password;
-                    SelectGender(data.Gender);
-                }
-            }
-        }
 
         private void verify_phone_number_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -156,7 +187,7 @@ namespace Blood_Donar
             using (Change change = new Change(oldPhoneNumber: phoneNumber))
             {
                 DialogResult dialogResult = change.ShowDialog();
-                
+
                 if (dialogResult == DialogResult.OK)
                 {
                     verify_email.Text = "Verified";
@@ -189,34 +220,16 @@ namespace Blood_Donar
                 {
                     verify_email.Text = "Verified";
                     verify_email.Enabled = false;
-                } 
+                }
             }
         }
 
-        private void SelectGender(int gender)
-        {
-            if (gender == 1)
-            {
-                male_btn1.Checked = true;
-                male_btn2.Checked = true;
-            }
-            else if (gender == 2)
-            {
-                female_btn1.Checked = true;
-                female_btn2.Checked = true;
-            }
-            else if (gender == 3)
-            {
-                others_btn1.Checked = true;
-                others_btn2.Checked = true;
-            }
-        }
 
         private void verify_email_Click(object sender, EventArgs e)
         {
-            using (Verify verify =  new Verify(name: name, email: email)) 
+            using (Verify verify = new Verify(name: name, email: email))
             {
-                DialogResult dialogResult = verify. ShowDialog();
+                DialogResult dialogResult = verify.ShowDialog();
 
                 if (dialogResult == DialogResult.OK)
                 {
@@ -225,5 +238,38 @@ namespace Blood_Donar
                 }
             }
         }
+
+        private void update_btn_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE [User Information] SET ";
+
+            if (name != name_tb.Text)
+                query += $"Name = '{name_tb.Text}', ";
+
+            int gender = Equipment.Gender(male_btn: male_btn, female_btn: female_btn, others_btn: others_btn);
+            if (this.gender != gender)
+                query += $"Gender = {gender}, ";
+
+            if (city != city_tb.Text)
+                query += $"City = '{city_tb.Text}', ";
+
+            if (bloodGroup != blood_group_cb.SelectedIndex)
+                query += $"[Blood Group] = {blood_group_cb.SelectedIndex}, ";
+
+            query += $"{query.Remove(query.Length - 2)} WHERE [ID] = '{this.id}'";
+
+                // Execute the query using your DataBase class
+            DataBase dataBase = new DataBase();
+            string error;
+            dataBase.DataAccess(query, out error);
+
+            if (!string.IsNullOrWhiteSpace(error))
+            {                    
+                MessageBox.Show($"Class: Profile Function: update_btn_Click \nError: {error}");
+                return;
+            }
+
+        }
+
     }
 }

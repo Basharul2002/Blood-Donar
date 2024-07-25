@@ -57,12 +57,13 @@ namespace Blood_Donar
 
             else if (otp_tb.Text == otpCode || otp_tb.Text == "1")
             {
-                string query = $@"UPDATE [User Information] SET ";
+                string query = $@"UPDATE [User Verify Information] SET ";
                  
                 if (email != null) 
-                    query += $"[Email Verified] = 1 WHERE [Email] = {email}";
+                    query += $"[Email Verified] = 1 WHERE [Email] = '{email}'";
                 else if (phonenumber != null)
-                    query += $"[Phone Number Verified] = 1 WHERE [Phone Number] = {phonenumber}";
+                    query += $"[Phone Number Verified] = 1 WHERE [Phone Number] = '{phonenumber}'";
+
                 string error;
                 DataBase dataBase = new DataBase();
                 DataTable dataTable = dataBase.DataAccess(query, out error);

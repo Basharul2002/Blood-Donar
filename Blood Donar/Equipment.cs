@@ -60,6 +60,22 @@ namespace Blood_Donar
         }
 
 
+        public static string GenderSelection(int gender)
+        {
+            if (gender == 1)
+                return "Male";
+            else if (gender == 2)
+                return "Female";
+            else if (gender == 3)
+                return "Others";
+            else
+                return null;
+        }
+
+        public static int Gender(RadioButton male_btn, RadioButton female_btn, RadioButton others_btn)
+        {
+            return (male_btn.Checked? 1 : female_btn.Checked? 2 : others_btn.Checked ? 3 : 0);
+        }
 
         public static string GenerateOTP()
         {

@@ -15,7 +15,7 @@ namespace Blood_Donar
 {
     public partial class RecoverPassword : Form
     {
-        private string name, email, phoneNumber, otpCode;
+        private string name, email, phoneNumber, password, otpCode;
         private DateTime OTPCreationTime;
         public RecoverPassword()
         {
@@ -23,17 +23,24 @@ namespace Blood_Donar
         }
         
         // After id selected
-        public RecoverPassword(string name, string email, string phoneNumber) : this()
+        public RecoverPassword(string name, string email, string phoneNumber, string password) : this()
         {
             this.name = name;
             this.email = email;
             this.phoneNumber = phoneNumber;
-            Design();
+            this.password = password;
+
+            this.Load += new EventHandler(RecoverPassword_Load);
+
 
         }
 
-       
-        
+        private void RecoverPassword_Load(object sender, EventArgs e)
+        {
+            Design();
+        }
+
+
         // Account Search
         private void search_btn_Click(object sender, EventArgs e)
         {
@@ -45,7 +52,7 @@ namespace Blood_Donar
             warning_message.Visible = false;
             DataBase dataBase = new DataBase();
 
-            string query = $"SELECT * FROM [User Information] WHERE [Email] LIKE {account_search_tb.Text} OR [Phone Number] = {account_search_tb.Text}";
+            string query = $"SELECT * FROM [User Information] WHERE [Email] LIKE '%{account_search_tb.Text}%' OR [Phone Number] = '%{account_search_tb.Text}%'";
             string error;
             DataTable dataTable = dataBase.DataAccess(query, out error);
 
@@ -55,19 +62,23 @@ namespace Blood_Donar
                 return;
             }
 
-            if (dataTable.Rows.Count > 0)
+            if (dataTable.Rows.Count <= 0)
             {
                 warning_message.Text = "No user found via on EMAIL or PHONE NUMBER";
                 warning_message.Visible = true;
                 return;
             }
 
+            // MessageBox.Show(dataTable.Rows.Count.ToString());
+            account_search_panel.Visible = false;
+            profile_panel.Visible = true;
+
             UserProfile profile;
             for ( int i = 0; i < dataTable.Rows.Count; i++ ) 
             {
-                profile  = new UserProfile(name: dataTable.Columns["Name"].ToString(), city: dataTable.Columns["City"].ToString());
-
-                profile.Tag = new Data { Name = dataTable.Columns["Name"].ToString(), Email = dataTable.Columns["Email"].ToString(), PhoneNumber = dataTable.Columns["Phone Number"].ToString() };
+                profile  = new UserProfile(name: dataTable.Rows[i]["Name"].ToString(), city: dataTable.Rows[i]["City"].ToString());
+                profile.Tag = new Data { Name = dataTable.Rows[i]["Name"].ToString(), Email = dataTable.Rows[i]["Email"].ToString(), PhoneNumber = dataTable.Rows[i]["Phone Number"].ToString(),  Password = dataTable.Rows[i]["Password"].ToString()};
+                profile_showing_panel.Controls.Add(profile);
             }
         }
 
@@ -79,8 +90,9 @@ namespace Blood_Donar
             profile_panel.Visible = false;
             otp_sending_panel.Visible = true;
             name_label.Text = name;
-            email_radio_button.Text = $"Send an email to {Equipment.MaskEmail(email)}";
-            sms_radio_button.Text = $"Text a code to the phone number ending in {Equipment.MaskPhoneNumber(phoneNumber)}";
+            email_radio_button.Text = $"Send an email to {Equipment.MaskEmail(this.email)}";
+            sms_radio_button.Text = $"Text a code to the phone number ending in {Equipment.MaskPhoneNumber(this.phoneNumber)}";
+            otp_sending_panel.Visible = true;
         }
 
 
@@ -189,10 +201,6 @@ namespace Blood_Donar
                 verification_code_warning_label.Text = "INVALID OTP";
         }
 
-        private void account_search_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
 
 

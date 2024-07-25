@@ -18,27 +18,29 @@ namespace Blood_Donar
         }
 
 
-        public DonarInformation(int id, string name, string email, string phoneNumber, string city, string bloodGroup) : this()
+        public DonarInformation(int id, string name, string email, string phoneNumber, string city, int bloodGroup, int gender) : this()
         {
             DataShow(name, email, phoneNumber, city, bloodGroup);
-            this.Tag = id;
+            this.Tag = new Data { ID = id, Name = name, Email = email, PhoneNumber = phoneNumber, City = city, BloodGroup = bloodGroup, Gender = gender};
         }
 
-        private void DataShow(string name, string email, string phoneNumber, string city, string bloodGroup)
+        private void DataShow(string name, string email, string phoneNumber, string city, int bloodGroup)
         {
             name_label.Text = $"<b>NAME : </b>{name}";
             email_label.Text = $"<b>EMAIL : </b>{email}";
             phone_number_label.Text = $"<b>PHONE NUMBER : </b>{phoneNumber}";
             city_label.Text = $"<b>CITY : </b>{city}";
-            blood_group_label.Text = $"<b>Blood Group: </b>{Equipment.BloodGroupSelection(bloodGroup)}";
+            blood_group_label.Text = $"<b>Blood Group: </b>{Equipment.BloodGroupSelection(bloodGroup.ToString())}";
         }
 
         private void profile_Click(object sender, EventArgs e)
         {
             if (!DashBoardForm.Instance.panelContainer.Controls.ContainsKey("Profile"))
             {
+                Data tag = (Data)this.Tag;
+            
                 DashBoardForm.Instance.panelContainer.Controls.Clear(); 
-                Profile profile = new Profile(false, Convert.ToInt32(this.Tag));
+                Profile profile = new Profile(personalProfile: false, id: Convert.ToInt32(tag.ID), name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber, city: tag.City, bloodGroup: tag.BloodGroup, gender: tag.Gender);
                 profile.Dock = DockStyle.Fill;
                 DashBoardForm.Instance.panelContainer.Controls.Add(profile);
             }            

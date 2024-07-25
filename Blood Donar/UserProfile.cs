@@ -32,7 +32,7 @@ namespace Blood_Donar
         private void profile_Click(object sender, EventArgs e)
         {
             Data tag = (Data)this.Tag;
-            RecoverPassword recoverPassword = new RecoverPassword(name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber);
+            RecoverPassword recoverPassword = new RecoverPassword(name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber, password: tag.Password);
         }
     }
 }
