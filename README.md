@@ -11,8 +11,9 @@ Blood Donor is a desktop application developed in C# using the .NET framework, a
 ### Blood Donor List
 - Logged-in users can view a list of available blood donors.
 - Clicking on a donor from the list will display their profile with the following details:
-  - Mobile Number
+  - Name
   - Email
+  - Mobile Number
   - City
   - Gender
   - Blood Group
@@ -83,5 +84,5 @@ Contributions are welcome! Please submit a pull request or open an issue to disc
     This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
-    For any inquiries or support, please contact:Email: basharulalam6@gmail.com
+    For any inquiries or support, please contact: Email: basharulalam6@gmail.com
     Thank you for using Blood Donor! Your contributions and feedback are highly appreciated.
