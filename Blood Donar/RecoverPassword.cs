@@ -21,22 +21,14 @@ namespace Blood_Donar
         {
             InitializeComponent();
         }
-        
+
         // After id selected
-        public RecoverPassword(string name, string email, string phoneNumber, string password) : this()
+        public void ShowOTPSendingPanel(string name, string email, string phoneNumber, string password)
         {
             this.name = name;
             this.email = email;
             this.phoneNumber = phoneNumber;
             this.password = password;
-
-            this.Load += new EventHandler(RecoverPassword_Load);
-
-
-        }
-
-        private void RecoverPassword_Load(object sender, EventArgs e)
-        {
             Design();
         }
 
@@ -76,7 +68,7 @@ namespace Blood_Donar
             UserProfile profile;
             for ( int i = 0; i < dataTable.Rows.Count; i++ ) 
             {
-                profile  = new UserProfile(name: dataTable.Rows[i]["Name"].ToString(), city: dataTable.Rows[i]["City"].ToString());
+                profile  = new UserProfile(name: dataTable.Rows[i]["Name"].ToString(), city: dataTable.Rows[i]["City"].ToString(), recoverPasswordForm: this);
                 profile.Tag = new Data { Name = dataTable.Rows[i]["Name"].ToString(), Email = dataTable.Rows[i]["Email"].ToString(), PhoneNumber = dataTable.Rows[i]["Phone Number"].ToString(),  Password = dataTable.Rows[i]["Password"].ToString()};
                 profile_showing_panel.Controls.Add(profile);
             }
@@ -90,8 +82,8 @@ namespace Blood_Donar
             profile_panel.Visible = false;
             otp_sending_panel.Visible = true;
             name_label.Text = name;
-            email_radio_button.Text = $"Send an email to {Equipment.MaskEmail(this.email)}";
-            sms_radio_button.Text = $"Text a code to the phone number ending in {Equipment.MaskPhoneNumber(this.phoneNumber)}";
+            email_radio_button.Text = $"Send an email to {Utility.MaskEmail(this.email)}";
+            sms_radio_button.Text = $"Text a code to the phone number ending in {Utility.MaskPhoneNumber(this.phoneNumber)}";
             otp_sending_panel.Visible = true;
         }
 
@@ -105,7 +97,7 @@ namespace Blood_Donar
         }
         private void otp_send_btn_Click(object sender, EventArgs e)
         {
-            otpCode = Equipment.GenerateOTP();
+            otpCode = Utility.GenerateOTP();
             if (email_radio_button.Checked)
             {
                 // string name, string recipientEmail, string otp
@@ -132,7 +124,7 @@ namespace Blood_Donar
         // Here verify the OTP code
         private void OTPANDTimer()
         {
-            otpCode = Equipment.GenerateOTP();
+            otpCode = Utility.GenerateOTP();
             if (email_radio_button.Checked)
                 Verification.EmailVerify(Name, email, otpCode);
             else if (sms_radio_button.Checked)
@@ -177,24 +169,9 @@ namespace Blood_Donar
                 verification_code_warning_label.Text = "Enter the OTP";
 
             else if (otpCode == otp_code_tb.Text || otp_code_tb.Text == "1")
-            {
+            {               
+                otp_verify_panel.Visible = false;
                 change_password_panel.Visible = true;
-                string query = $@"UPDATE [User Information] SET [Password] = ";
-
-
-
-                string error;
-                DataBase dataBase = new DataBase();
-                DataTable dataTable = dataBase.DataAccess(query, out error);
-
-                if (!string.IsNullOrEmpty(error))
-                {
-                    MessageBox.Show($"Class: Change Function: verify_btn_Click \nError: {error}");
-                    return;
-                }
-
-                DialogResult = DialogResult.OK;
-                this.Hide();
             }
 
             else if (otpCode != otp_code_tb.Text)
@@ -208,12 +185,12 @@ namespace Blood_Donar
         // Here user change the password that means reset the password
         private void password_toggle_btn_Click(object sender, EventArgs e)
         {
-            Equipment.ToggoleButton(password_tb, password_toggle_btn);
+            Utility.TogglePasswordVisibility(password_tb, password_toggle_btn);
         }
 
         private void confirm_password_toggle_btn_Click(object sender, EventArgs e)
         {
-            Equipment.ToggoleButton(confirm_password_tb, confirm_password_toggle_btn);
+            Utility.TogglePasswordVisibility(confirm_password_tb, confirm_password_toggle_btn);
         }
 
 
@@ -241,6 +218,19 @@ namespace Blood_Donar
                 return;
             }
 
+            string query = $@"UPDATE [User Information] SET [Password] = '{password_tb.Text}'";
+
+
+
+            string error;
+            DataBase dataBase = new DataBase();
+            DataTable dataTable = dataBase.DataAccess(query, out error);
+
+            if (!string.IsNullOrEmpty(error))
+            {
+                MessageBox.Show($"Class: RecoverPassword Function: reset_password_Click \nError: {error}");
+                return;
+            }
             DialogResult = DialogResult.OK;
         }
 

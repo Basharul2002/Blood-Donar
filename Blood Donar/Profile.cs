@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Blood_Donar
@@ -62,9 +63,9 @@ namespace Blood_Donar
             name_label.Text = $"Name: {this.name}";
             email_label.Text = $"Email: {this.email}";
             phone_number_label.Text = $"Phone Number: {this.phoneNumber}";
-            blood_group_label.Text = $"Blood Group: {Equipment.BloodGroupSelection(this.bloodGroup.ToString())}";
+            blood_group_label.Text = $"Blood Group: {Utility.GetBloodGroupName(this.bloodGroup.ToString())}";
             city_label.Text = $"City: {this.city}";
-            gender_label.Text = $"Gender: {Equipment.GenderSelection(this.gender)}";
+            gender_label.Text = $"Gender: {Utility.GetGenderName(this.gender)}";
         }
 
         private void name_tb_TextChanged(object sender, EventArgs e)
@@ -155,7 +156,7 @@ namespace Blood_Donar
             this.city = city_tb.Text = dataTable.Rows[0]["City"].ToString();
             this.password = password_tb.Text = dataTable.Rows[0]["Password"].ToString();
             this.gender = Convert.ToInt32(dataTable.Rows[0]["Gender"]);
-            Equipment.GenderSelection(gender, male_btn, female_btn, others_btn);
+            Utility.SelectGenderRadioButton(gender, male_btn, female_btn, others_btn);
             this.gender = blood_group_cb.SelectedIndex = Convert.ToInt32(dataTable.Rows[0]["Blood Group"]);
             // emailVerify = row["Email Verified"].ToString() == "1";
             // phoneNumberVerify = row["Phone Number Verified"].ToString() == "1";
@@ -246,7 +247,7 @@ namespace Blood_Donar
             if (name != name_tb.Text)
                 query += $"Name = '{name_tb.Text}', ";
 
-            int gender = Equipment.Gender(male_btn: male_btn, female_btn: female_btn, others_btn: others_btn);
+            int gender = Utility.GetGenderID(male_btn: male_btn, female_btn: female_btn, others_btn: others_btn);
             if (this.gender != gender)
                 query += $"Gender = {gender}, ";
 

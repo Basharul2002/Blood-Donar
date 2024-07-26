@@ -111,7 +111,7 @@ namespace Blood_Donar
 
         private void password_toggle_btn_Click(object sender, EventArgs e)
         {
-            Equipment.ToggoleButton(password_tb, password_toggle_btn);
+            Utility.TogglePasswordVisibility(password_tb, password_toggle_btn);
         }
 
         private void recover_password_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

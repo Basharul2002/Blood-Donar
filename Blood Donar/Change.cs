@@ -118,7 +118,7 @@ namespace Blood_Donar
         // Here send the OTP via EMAIL or SMS
         private void OTPANDTimer()
         {
-            otpCode = Equipment.GenerateOTP();
+            otpCode = Utility.GenerateOTP();
             if (oldEmail != null)
                 Verification.EmailVerify(Name, email_tb.Text, otpCode);
             else if (oldPhoneNumber != null)

@@ -31,9 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.change_password_panel = new System.Windows.Forms.Panel();
+            this.confirm_password_toggle_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.password_toggle_btn = new Guna.UI2.WinForms.Guna2Button();
             this.reset_password = new Guna.UI2.WinForms.Guna2Button();
             this.confirm_password_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.password_tb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.confirm_password_warning_label = new System.Windows.Forms.Label();
             this.password_warning_label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,13 +64,10 @@
             this.account_search_panel = new System.Windows.Forms.Panel();
             this.account_search_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.search_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.warning_message = new System.Windows.Forms.Label();
             this.message = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.confirm_password_toggle_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.password_toggle_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.warning_message = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.change_password_panel.SuspendLayout();
             this.otp_verify_panel.SuspendLayout();
@@ -108,6 +108,46 @@
             this.change_password_panel.Size = new System.Drawing.Size(488, 338);
             this.change_password_panel.TabIndex = 4;
             this.change_password_panel.Visible = false;
+            // 
+            // confirm_password_toggle_btn
+            // 
+            this.confirm_password_toggle_btn.BackColor = System.Drawing.Color.Transparent;
+            this.confirm_password_toggle_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.confirm_password_toggle_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.confirm_password_toggle_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.confirm_password_toggle_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.confirm_password_toggle_btn.FillColor = System.Drawing.Color.White;
+            this.confirm_password_toggle_btn.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
+            this.confirm_password_toggle_btn.ForeColor = System.Drawing.Color.White;
+            this.confirm_password_toggle_btn.Image = global::Blood_Donar.Properties.Resources.show;
+            this.confirm_password_toggle_btn.Location = new System.Drawing.Point(403, 190);
+            this.confirm_password_toggle_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.confirm_password_toggle_btn.Name = "confirm_password_toggle_btn";
+            this.confirm_password_toggle_btn.Size = new System.Drawing.Size(29, 25);
+            this.confirm_password_toggle_btn.TabIndex = 27;
+            this.confirm_password_toggle_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.confirm_password_toggle_btn.UseTransparentBackground = true;
+            this.confirm_password_toggle_btn.Click += new System.EventHandler(this.confirm_password_toggle_btn_Click);
+            // 
+            // password_toggle_btn
+            // 
+            this.password_toggle_btn.BackColor = System.Drawing.Color.Transparent;
+            this.password_toggle_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.password_toggle_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.password_toggle_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.password_toggle_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.password_toggle_btn.FillColor = System.Drawing.Color.White;
+            this.password_toggle_btn.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
+            this.password_toggle_btn.ForeColor = System.Drawing.Color.White;
+            this.password_toggle_btn.Image = global::Blood_Donar.Properties.Resources.show;
+            this.password_toggle_btn.Location = new System.Drawing.Point(403, 113);
+            this.password_toggle_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.password_toggle_btn.Name = "password_toggle_btn";
+            this.password_toggle_btn.Size = new System.Drawing.Size(29, 25);
+            this.password_toggle_btn.TabIndex = 28;
+            this.password_toggle_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.password_toggle_btn.UseTransparentBackground = true;
+            this.password_toggle_btn.Click += new System.EventHandler(this.password_toggle_btn_Click);
             // 
             // reset_password
             // 
@@ -152,7 +192,7 @@
             this.confirm_password_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.confirm_password_tb.Location = new System.Drawing.Point(32, 184);
             this.confirm_password_tb.Name = "confirm_password_tb";
-            this.confirm_password_tb.PasswordChar = '\0';
+            this.confirm_password_tb.PasswordChar = '●';
             this.confirm_password_tb.PlaceholderText = "Enter your new password one more time";
             this.confirm_password_tb.SelectedText = "";
             this.confirm_password_tb.Size = new System.Drawing.Size(404, 36);
@@ -178,11 +218,24 @@
             this.password_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.password_tb.Location = new System.Drawing.Point(32, 108);
             this.password_tb.Name = "password_tb";
-            this.password_tb.PasswordChar = '\0';
+            this.password_tb.PasswordChar = '●';
             this.password_tb.PlaceholderText = "Enter your new password";
             this.password_tb.SelectedText = "";
             this.password_tb.Size = new System.Drawing.Size(404, 36);
             this.password_tb.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(29, 251);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(403, 16);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Resetting your password will log you out of all your active sessions.";
             // 
             // confirm_password_warning_label
             // 
@@ -601,6 +654,21 @@
             this.search_btn.UseTransparentBackground = true;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
+            // warning_message
+            // 
+            this.warning_message.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.warning_message.AutoSize = true;
+            this.warning_message.BackColor = System.Drawing.Color.Transparent;
+            this.warning_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.warning_message.ForeColor = System.Drawing.Color.Red;
+            this.warning_message.Location = new System.Drawing.Point(32, 58);
+            this.warning_message.Name = "warning_message";
+            this.warning_message.Size = new System.Drawing.Size(371, 34);
+            this.warning_message.TabIndex = 5;
+            this.warning_message.Text = "Please fill in at least one field\r\nFill in at least one field to search for your " +
+    "account";
+            // 
             // message
             // 
             this.message.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -629,73 +697,9 @@
             this.title.TabIndex = 6;
             this.title.Text = "FIND YOUR ACCOUNT";
             // 
-            // confirm_password_toggle_btn
+            // timer
             // 
-            this.confirm_password_toggle_btn.BackColor = System.Drawing.Color.Transparent;
-            this.confirm_password_toggle_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.confirm_password_toggle_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.confirm_password_toggle_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.confirm_password_toggle_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.confirm_password_toggle_btn.FillColor = System.Drawing.Color.White;
-            this.confirm_password_toggle_btn.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
-            this.confirm_password_toggle_btn.ForeColor = System.Drawing.Color.White;
-            this.confirm_password_toggle_btn.Image = global::Blood_Donar.Properties.Resources.show;
-            this.confirm_password_toggle_btn.Location = new System.Drawing.Point(403, 190);
-            this.confirm_password_toggle_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.confirm_password_toggle_btn.Name = "confirm_password_toggle_btn";
-            this.confirm_password_toggle_btn.Size = new System.Drawing.Size(29, 25);
-            this.confirm_password_toggle_btn.TabIndex = 27;
-            this.confirm_password_toggle_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.confirm_password_toggle_btn.UseTransparentBackground = true;
-            this.confirm_password_toggle_btn.Click += new System.EventHandler(this.confirm_password_toggle_btn_Click);
-            // 
-            // password_toggle_btn
-            // 
-            this.password_toggle_btn.BackColor = System.Drawing.Color.Transparent;
-            this.password_toggle_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.password_toggle_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.password_toggle_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.password_toggle_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.password_toggle_btn.FillColor = System.Drawing.Color.White;
-            this.password_toggle_btn.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
-            this.password_toggle_btn.ForeColor = System.Drawing.Color.White;
-            this.password_toggle_btn.Image = global::Blood_Donar.Properties.Resources.show;
-            this.password_toggle_btn.Location = new System.Drawing.Point(403, 113);
-            this.password_toggle_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.password_toggle_btn.Name = "password_toggle_btn";
-            this.password_toggle_btn.Size = new System.Drawing.Size(29, 25);
-            this.password_toggle_btn.TabIndex = 28;
-            this.password_toggle_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.password_toggle_btn.UseTransparentBackground = true;
-            this.password_toggle_btn.Click += new System.EventHandler(this.password_toggle_btn_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(29, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(403, 16);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Resetting your password will log you out of all your active sessions.";
-            // 
-            // warning_message
-            // 
-            this.warning_message.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.warning_message.AutoSize = true;
-            this.warning_message.BackColor = System.Drawing.Color.Transparent;
-            this.warning_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.warning_message.ForeColor = System.Drawing.Color.Red;
-            this.warning_message.Location = new System.Drawing.Point(32, 58);
-            this.warning_message.Name = "warning_message";
-            this.warning_message.Size = new System.Drawing.Size(371, 34);
-            this.warning_message.TabIndex = 5;
-            this.warning_message.Text = "Please fill in at least one field\r\nFill in at least one field to search for your " +
-    "account";
+            this.timer.Tick += new System.EventHandler(this.TimerTick);
             // 
             // RecoverPassword
             // 

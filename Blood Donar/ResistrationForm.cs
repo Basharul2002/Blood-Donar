@@ -221,12 +221,12 @@ namespace Blood_Donar
 
         private void password_toggle_btn_Click(object sender, EventArgs e)
         {
-            Equipment.ToggoleButton(password_tb, password_toggle_btn);
+            Utility.TogglePasswordVisibility(password_tb, password_toggle_btn);
         }
 
         private void confirm_password_toggle_btn_Click(object sender, EventArgs e)
         {
-            Equipment.ToggoleButton(confirm_password_tb, confirm_password_toggle_btn);
+            Utility.TogglePasswordVisibility(confirm_password_tb, confirm_password_toggle_btn);
         }
 
         private void password_tb_TextChanged(object sender, EventArgs e)

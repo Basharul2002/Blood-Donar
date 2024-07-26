@@ -25,7 +25,7 @@ namespace Blood_Donar
             this.email = email;
             this.phonenumber = phoneNumber;
 
-            otpCode = Equipment.GenerateOTP();
+            otpCode = Utility.GenerateOTP();
             Design();
         }
 
@@ -98,7 +98,6 @@ namespace Blood_Donar
             if (remainingTime.TotalSeconds > 0)
             {
                 timer_label.Text = "Please enter the code within " + remainingTime.ToString(@"mm\:ss") + " remaining";
-                timer_label.Location = new Point(31, 124);
                 resend_btn.Enabled = false;
             }
 
@@ -123,7 +122,7 @@ namespace Blood_Donar
             OTPCreationTime = DateTime.Now;
             resend_btn.Enabled = false;
             StartTimer();
-            otpCode = Equipment.GenerateOTP();
+            otpCode = Utility.GenerateOTP();
             Verification.EmailVerify(this.name, this.email, otpCode);
         }
 

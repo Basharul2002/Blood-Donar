@@ -12,13 +12,15 @@ namespace Blood_Donar
 {
     public partial class UserProfile : UserControl
     {
+        private RecoverPassword recoverPasswordForm;
         public UserProfile()
         {
             InitializeComponent();
         }
 
-        public UserProfile(string name, string city) : this()
+        public UserProfile(string name, string city, RecoverPassword recoverPasswordForm) : this()
         {
+            this.recoverPasswordForm = recoverPasswordForm;
             Design(name, city);
         }
 
@@ -32,7 +34,6 @@ namespace Blood_Donar
         private void profile_Click(object sender, EventArgs e)
         {
             Data tag = (Data)this.Tag;
-            RecoverPassword recoverPassword = new RecoverPassword(name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber, password: tag.Password);
-        }
+            recoverPasswordForm.ShowOTPSendingPanel(name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber, password: tag.Password);        }
     }
 }

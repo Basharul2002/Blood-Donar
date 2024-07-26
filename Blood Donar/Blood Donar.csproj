@@ -98,7 +98,7 @@
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Equipment.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>

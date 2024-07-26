@@ -30,7 +30,7 @@ namespace Blood_Donar
             email_label.Text = $"<b>EMAIL : </b>{email}";
             phone_number_label.Text = $"<b>PHONE NUMBER : </b>{phoneNumber}";
             city_label.Text = $"<b>CITY : </b>{city}";
-            blood_group_label.Text = $"<b>Blood Group: </b>{Equipment.BloodGroupSelection(bloodGroup.ToString())}";
+            blood_group_label.Text = $"<b>Blood Group: </b>{Utility.GetBloodGroupName(bloodGroup.ToString())}";
         }
 
         private void profile_Click(object sender, EventArgs e)
