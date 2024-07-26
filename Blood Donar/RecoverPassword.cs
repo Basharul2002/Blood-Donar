@@ -15,6 +15,7 @@ namespace Blood_Donar
 {
     public partial class RecoverPassword : Form
     {
+        private int id;
         private string name, email, phoneNumber, password, otpCode;
         private DateTime OTPCreationTime;
         public RecoverPassword()
@@ -23,8 +24,9 @@ namespace Blood_Donar
         }
 
         // After id selected
-        public void ShowOTPSendingPanel(string name, string email, string phoneNumber, string password)
+        public void ShowOTPSendingPanel(int id, string name, string email, string phoneNumber, string password)
         {
+            this.id = id;
             this.name = name;
             this.email = email;
             this.phoneNumber = phoneNumber;
@@ -69,7 +71,7 @@ namespace Blood_Donar
             for ( int i = 0; i < dataTable.Rows.Count; i++ ) 
             {
                 profile  = new UserProfile(name: dataTable.Rows[i]["Name"].ToString(), city: dataTable.Rows[i]["City"].ToString(), recoverPasswordForm: this);
-                profile.Tag = new Data { Name = dataTable.Rows[i]["Name"].ToString(), Email = dataTable.Rows[i]["Email"].ToString(), PhoneNumber = dataTable.Rows[i]["Phone Number"].ToString(),  Password = dataTable.Rows[i]["Password"].ToString()};
+                profile.Tag = new Data { ID = Convert.ToInt32(dataTable.Rows[i]["ID"]), Name = dataTable.Rows[i]["Name"].ToString(), Email = dataTable.Rows[i]["Email"].ToString(), PhoneNumber = dataTable.Rows[i]["Phone Number"].ToString(),  Password = dataTable.Rows[i]["Password"].ToString()};
                 profile_showing_panel.Controls.Add(profile);
             }
         }
@@ -218,12 +220,12 @@ namespace Blood_Donar
 
             if (password_tb.Text != confirm_password_tb.Text)
             {
-                confirm_password_warning_label.Text = "Passwords do not match";
+                confirm_password_warning_label.Text = "Passwords does not match";
                 confirm_password_warning_label.Visible = true;
                 return;
             }
 
-            string query = $@"UPDATE [User Information] SET [Password] = '{password_tb.Text}'";
+            string query = $@"UPDATE [User Information] SET [Password] = '{password_tb.Text}' WHERE ID = {this.id}";
 
 
 

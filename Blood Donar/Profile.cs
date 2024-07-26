@@ -13,9 +13,8 @@ namespace Blood_Donar
 {
     public partial class Profile : UserControl
     {
-        private int id, bloodGroup, gender;
+        private int id, bloodGroup, gender, emailVerify, phoneNumberVerify;
         private string name, email, phoneNumber, city, password;
-        private bool emailVerify = false, phoneNumberVerify = false;
         public Profile()
         {
             InitializeComponent();
@@ -33,17 +32,14 @@ namespace Blood_Donar
             this.bloodGroup = bloodGroup;
 
             if (personalProfile)
+            {
+                DataBaseDataShow(id);
                 PersonalProfileDataLoad();
+            }
+                
             else
                 DonarProfileDataLoad();
-
-            DataBaseDataShow(id);
-            // DataShow(email);
-
-            // After all data collected from database
-            this.id = id;
-            name = name_tb.Text;
-            phoneNumber = phone_number_tb.Text;
+           
         }
 
 
@@ -51,6 +47,19 @@ namespace Blood_Donar
         {
             user_profile_panel.Visible = true;
             donar_profile_panel.Visible = false;
+
+            if (emailVerify == 1)
+            {
+                verify_email.Text = "Verified";
+                verify_email.Enabled = false;
+            }
+
+            if (phoneNumberVerify == 1)
+            {
+                verify_phone_number.Text = "Verified";
+                verify_phone_number.Enabled = false;
+            }
+                
 
         }
 
@@ -70,7 +79,8 @@ namespace Blood_Donar
 
         private void name_tb_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(name_tb.Text) || name_tb.Text == this.Name)
+           // MessageBox.Show($"Name: {this.name}\nText: {name_tb.Text}");
+            if (string.IsNullOrWhiteSpace(name_tb.Text) || name_tb.Text == this.name)
             {
                 update_btn.Enabled = false;
                 return;
@@ -81,7 +91,7 @@ namespace Blood_Donar
 
         private void city_tb_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(city_tb.Text) || city_tb.Text == this.Name)
+            if (string.IsNullOrWhiteSpace(city_tb.Text) || city_tb.Text == this.city)
             {
                 update_btn.Enabled = false;
                 return;
@@ -90,31 +100,10 @@ namespace Blood_Donar
             update_btn.Enabled = true;
         }
 
-        private void male_btn_CheckedChanged(object sender, EventArgs e)
+        private void gender_radio_btn_CheckedChanged(object sender, EventArgs e)
         {
-            if (gender == 1)
-            {
-                update_btn.Enabled = false;
-                return;
-            }
-
-            update_btn.Enabled = true;
-        }
-
-        private void female_btn_CheckedChanged(object sender, EventArgs e)
-        {
-            if (gender == 2)
-            {
-                update_btn.Enabled = false;
-                return;
-            }
-
-            update_btn.Enabled = true;
-        }
-
-        private void others_btn_CheckedChanged(object sender, EventArgs e)
-        {
-            if (gender == 3)
+          //  MessageBox.Show($"Gender: {this.gender}\nButton: {male_btn.Checked}, {female_btn.Checked}, {others_btn.Checked}");
+            if ((gender == 1 && male_btn.Checked) || (gender == 2 && female_btn.Checked) || (gender == 3 && others_btn.Checked))
             {
                 update_btn.Enabled = false;
                 return;
@@ -127,7 +116,23 @@ namespace Blood_Donar
         {
             // MessageBox.Show($"Email: {email}");
             DataBase dataBase = new DataBase();
-            string query = $"SELECT * FROM [User Information] WHERE [ID] = {id}";
+            string query = $@"SELECT 
+                                UI.ID, 
+                                UI.Name, 
+                                UI.Email, 
+                                UI.[Phone Number], 
+                                UI.City, 
+                                UI.[Blood Group], 
+                                UI.Gender, 
+                                UI.Password, 
+                                UVI.Email AS [Email Verify], 
+                                UVI.[Phone Number] AS [Phone Number Verify]
+                            FROM 
+                                [User Information] UI
+                            INNER JOIN 
+                                [User Verify Information] UVI ON UI.ID = UVI.ID
+                            WHERE 
+                                UI.ID = {id}";
             string error;
             DataTable dataTable = dataBase.DataAccess(query, out error);
 
@@ -149,24 +154,31 @@ namespace Blood_Donar
                 return;
             }
 
-
-            this.name = name_tb.Text = dataTable.Rows[0]["Name"].ToString();
-            this.email = email_tb.Text = dataTable.Rows[0]["Email"].ToString();
-            this.phoneNumber = phone_number_tb.Text = dataTable.Rows[0]["Phone Number"].ToString();
-            this.city = city_tb.Text = dataTable.Rows[0]["City"].ToString();
-            this.password = password_tb.Text = dataTable.Rows[0]["Password"].ToString();
+            this.id = Convert.ToInt32(dataTable.Rows[0]["ID"]);
+            name_tb.Text = this.name = dataTable.Rows[0]["Name"].ToString();
+            email_tb.Text = this.email = dataTable.Rows[0]["Email"].ToString();
+            phone_number_tb.Text = this.phoneNumber = dataTable.Rows[0]["Phone Number"].ToString();
+            city_tb.Text = this.city = dataTable.Rows[0]["City"].ToString();
             this.gender = Convert.ToInt32(dataTable.Rows[0]["Gender"]);
+            this.password = dataTable.Rows[0]["Password"].ToString();
             Utility.SelectGenderRadioButton(gender, male_btn, female_btn, others_btn);
-            this.gender = blood_group_cb.SelectedIndex = Convert.ToInt32(dataTable.Rows[0]["Blood Group"]);
-            // emailVerify = row["Email Verified"].ToString() == "1";
-            // phoneNumberVerify = row["Phone Number Verified"].ToString() == "1";
+            blood_group_cb.SelectedIndex = this.bloodGroup = Convert.ToInt32(dataTable.Rows[0]["Blood Group"]);
+            emailVerify = Convert.ToInt32(dataTable.Rows[0]["Email Verify"]);
+            phoneNumberVerify = Convert.ToInt32(dataTable.Rows[0]["Phone Number Verify"]);
         }
 
+        private void change_password_btn_Click(object sender, EventArgs e)
+        {
+            using (ChangePassword changePassword = new ChangePassword(this.id, this.password)) 
+            {
+                DialogResult dialogResult = changePassword.ShowDialog();
 
+            }
+        }
 
         private void verify_phone_number_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            using (Verify verify = new Verify(name: name, phoneNumber: phoneNumber))
+            using (Verify verify = new Verify(id: this.id, name: name, phoneNumber: phoneNumber))
             {
                 DialogResult dialogResult = verify.ShowDialog();
 
@@ -213,7 +225,7 @@ namespace Blood_Donar
 
         private void verify_email_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            using (Verify verify = new Verify(name: name, email: email))
+            using (Verify verify = new Verify(id: this.id, name: name, email: email))
             {
                 DialogResult dialogResult = verify.ShowDialog();
 
@@ -228,7 +240,7 @@ namespace Blood_Donar
 
         private void verify_email_Click(object sender, EventArgs e)
         {
-            using (Verify verify = new Verify(name: name, email: email))
+            using (Verify verify = new Verify(id: this.id, name: name, email: email))
             {
                 DialogResult dialogResult = verify.ShowDialog();
 

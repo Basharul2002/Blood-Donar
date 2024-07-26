@@ -178,12 +178,22 @@ namespace Blood_Donar
 
             if (!string.IsNullOrEmpty(error))
             {
-                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore 3 \nError: {error}", "Data Insert");
+                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore 3 \nError: {error}", "Data Insert 1");
                 return;
             }
 
+            query = $@"INSERT INTO [User Verify Information] (ID, Email, [Phone Number])
+                        VALUES
+                            ((SELECT MAX(ID) FROM [User Information]), 
+                             {0},
+                             {0}";
+            dataTable = dataBase.DataAccess(query, out error);
 
-
+            if (!string.IsNullOrEmpty(error))
+            {
+                MessageBox.Show($"Class Name: ResistrationForm Function: DataStore 3 \nError: {error}", "Data Insert 2");
+                return;
+            }
             if (!HomePage.Instance.leftPanelContainer.Controls.ContainsKey("LoginPage"))
             {
                 HomePage.Instance.leftPanelContainer.Controls.Clear();

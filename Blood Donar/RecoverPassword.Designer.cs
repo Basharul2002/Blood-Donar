@@ -249,6 +249,7 @@
             this.confirm_password_warning_label.Size = new System.Drawing.Size(283, 18);
             this.confirm_password_warning_label.TabIndex = 22;
             this.confirm_password_warning_label.Text = "Please enter the password more one time";
+            this.confirm_password_warning_label.Visible = false;
             // 
             // password_warning_label
             // 
@@ -262,6 +263,7 @@
             this.password_warning_label.Size = new System.Drawing.Size(183, 18);
             this.password_warning_label.TabIndex = 22;
             this.password_warning_label.Text = "Please enter the password";
+            this.password_warning_label.Visible = false;
             // 
             // label4
             // 

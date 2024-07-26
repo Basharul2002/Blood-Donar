@@ -30,6 +30,7 @@ namespace Blood_Donar
                             sqlDataAdapter.Fill(dataSet);
 
                             error = string.Empty;
+                            connection.Close();
                             return dataSet.Tables[0];
                             
                         }
@@ -38,7 +39,7 @@ namespace Blood_Donar
             }
             catch (Exception ex)
             {
-                error = ex.Message;
+                error = ex.Message;     
                 return null;
             }
         }

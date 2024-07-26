@@ -59,6 +59,12 @@
     <Compile Include="Change.Designer.cs">
       <DependentUpon>Change.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="Change.resx">
       <DependentUpon>Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>

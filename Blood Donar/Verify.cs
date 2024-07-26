@@ -12,6 +12,7 @@ namespace Blood_Donar
 {
     public partial class Verify : Form
     {
+        public int id;
         private string name, email, phonenumber, otpCode;
         private DateTime OTPCreationTime = DateTime.Now;
         public Verify()
@@ -19,8 +20,9 @@ namespace Blood_Donar
             InitializeComponent();
         }
 
-        public Verify(string name, string email = null, string phoneNumber = null) : this()
+        public Verify(int id, string name, string email = null, string phoneNumber = null) : this()
         {
+            this.id = id;
             this.name = name;
             this.email = email;
             this.phonenumber = phoneNumber;
@@ -55,14 +57,16 @@ namespace Blood_Donar
                 return;
             }
 
+            // UPDATE [User Verify Information] SET Email = 0 WHERE ID = 1
             else if (otp_tb.Text == otpCode || otp_tb.Text == "1")
             {
-                string query = $@"UPDATE [User Verify Information] SET ";
-                 
-                if (email != null) 
-                    query += $"[Email Verified] = 1 WHERE [Email] = '{email}'";
+                string query = $"UPDATE [User Verify Information] SET ";
+
+                if (email != null)
+                    query += $"[Email] = {1} WHERE [ID] = {this.id}";
+
                 else if (phonenumber != null)
-                    query += $"[Phone Number Verified] = 1 WHERE [Phone Number] = '{phonenumber}'";
+                    query += $"[Phone Number] = {1} WHERE [ID] = {this.id}";
 
                 string error;
                 DataBase dataBase = new DataBase();

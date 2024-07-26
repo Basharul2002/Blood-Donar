@@ -34,6 +34,6 @@ namespace Blood_Donar
         private void profile_Click(object sender, EventArgs e)
         {
             Data tag = (Data)this.Tag;
-            recoverPasswordForm.ShowOTPSendingPanel(name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber, password: tag.Password);        }
+            recoverPasswordForm.ShowOTPSendingPanel(id: tag.ID, name: tag.Name, email: tag.Email, phoneNumber: tag.PhoneNumber, password: tag.Password);        }
     }
 }
