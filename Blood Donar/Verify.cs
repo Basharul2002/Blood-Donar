@@ -35,13 +35,13 @@ namespace Blood_Donar
             {
                 way_label.Text = $"We sent an email with your confirmation code to";
                 way_number_label.Text = $"{this.email}";
-                Verification.EmailVerify(this.name, this.email, otpCode);
+                EmailService.SendVerificationEmail(this.name, this.email, otpCode, verification: true);
             }
             else if (!string.IsNullOrEmpty(phonenumber))
             {
                 way_label.Text = $"We sent an SMS with your confirmation code to";
                 way_number_label.Text = $"{this.phonenumber}";
-                Verification.PhoneNumberVerify(this.name, this.phonenumber, otpCode);
+                SMSService.PhoneNumberVerify(this.name, this.phonenumber, otpCode);
             }
             StartTimer();
         }
@@ -123,7 +123,7 @@ namespace Blood_Donar
             resend_btn.Enabled = false;
             StartTimer();
             otpCode = Utility.GenerateOTP();
-            Verification.EmailVerify(this.name, this.email, otpCode);
+            EmailService.SendVerificationEmail(this.name, this.email, otpCode, verification: true);
         }
 
 

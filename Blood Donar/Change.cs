@@ -120,9 +120,9 @@ namespace Blood_Donar
         {
             otpCode = Utility.GenerateOTP();
             if (oldEmail != null)
-                Verification.EmailVerify(Name, email_tb.Text, otpCode);
+                EmailService.SendVerificationEmail(Name, email_tb.Text, otpCode, verification: true);
             else if (oldPhoneNumber != null)
-                Verification.PhoneNumberVerify(Name, phone_number_tb.Text, otpCode);
+                SMSService.PhoneNumberVerify(Name, phone_number_tb.Text, otpCode);
 
             StartTimer();
         }

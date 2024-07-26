@@ -98,6 +98,7 @@
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="SMSService.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
@@ -131,7 +132,7 @@
     <Compile Include="UserProfile.Designer.cs">
       <DependentUpon>UserProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Verification.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="Verify.cs">
       <SubType>Form</SubType>
     </Compile>

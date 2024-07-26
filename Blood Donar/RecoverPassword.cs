@@ -101,14 +101,14 @@ namespace Blood_Donar
             if (email_radio_button.Checked)
             {
                 // string name, string recipientEmail, string otp
-                Verification.EmailVerify(name: name, recipientEmail: email, otp: otpCode);
+                EmailService.SendVerificationEmail(recipientName: name, recipientEmail: email, otpCode: otpCode, passwordReset: true);
                 way_label.Text = "We sent an email with your confirmation code to";
                 way_number_label.Text = $"{email}";
             }
 
             else if (sms_radio_button.Checked)
             {
-                Verification.PhoneNumberVerify(name: name, phoneNumber: phoneNumber, otpCode: otpCode);
+                SMSService.PhoneNumberVerify(name: name, phoneNumber: phoneNumber, otpCode: otpCode);
                 way_label.Text = "We sent a SMS with your confirmation code to";
                 way_number_label.Text = $"{phoneNumber}";
             }
@@ -126,9 +126,9 @@ namespace Blood_Donar
         {
             otpCode = Utility.GenerateOTP();
             if (email_radio_button.Checked)
-                Verification.EmailVerify(Name, email, otpCode);
+                EmailService.SendVerificationEmail(Name, email, otpCode, passwordReset: true);
             else if (sms_radio_button.Checked)
-                Verification.PhoneNumberVerify(Name, phoneNumber, otpCode);
+                SMSService.PhoneNumberVerify(Name, phoneNumber, otpCode);
             OTPCreationTime = DateTime.Now;
             StartTimer();
         }
@@ -150,8 +150,8 @@ namespace Blood_Donar
             if (remainingTime.TotalSeconds > 0)
             {
                 timer_label.Text = "Please enter the code within " + remainingTime.ToString(@"mm\:ss") + " remaining";
-                timer_label.Location = new Point(31, 124);
                 resend_btn.Enabled = false;
+                verify_btn.Enabled = true;
             }
 
             else
@@ -159,11 +159,13 @@ namespace Blood_Donar
                 timer_label.Text = "Your OTP code has expired. Please request a new one.";
                 timer.Stop();
                 resend_btn.Enabled = true;
+                verify_btn.Enabled = false;
             }
         }
 
         private void verify_btn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show($"OTP Code; {otpCode}\nText: {otp_code_tb.Text}");
 
             if (string.IsNullOrWhiteSpace(otp_code_tb.Text))
                 verification_code_warning_label.Text = "Enter the OTP";
@@ -175,7 +177,10 @@ namespace Blood_Donar
             }
 
             else if (otpCode != otp_code_tb.Text)
+            {
                 verification_code_warning_label.Text = "INVALID OTP";
+                verification_code_warning_label.Visible = true;
+            }
         }
 
 
