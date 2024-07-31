@@ -156,6 +156,7 @@
             this.reset_password.BackColor = System.Drawing.Color.Transparent;
             this.reset_password.BorderColor = System.Drawing.Color.IndianRed;
             this.reset_password.BorderRadius = 10;
+            this.reset_password.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reset_password.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.reset_password.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.reset_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -300,6 +301,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resend_btn.BackColor = System.Drawing.Color.Transparent;
             this.resend_btn.BorderRadius = 15;
+            this.resend_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resend_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.resend_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.resend_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -321,6 +323,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.verify_btn.BackColor = System.Drawing.Color.Transparent;
             this.verify_btn.BorderRadius = 15;
+            this.verify_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.verify_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.verify_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.verify_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -448,6 +451,7 @@
             this.back_btn.BackColor = System.Drawing.Color.Transparent;
             this.back_btn.BorderColor = System.Drawing.Color.White;
             this.back_btn.BorderRadius = 10;
+            this.back_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.back_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.back_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.back_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -471,6 +475,7 @@
             this.otp_send_btn.BackColor = System.Drawing.Color.Transparent;
             this.otp_send_btn.BorderColor = System.Drawing.Color.IndianRed;
             this.otp_send_btn.BorderRadius = 10;
+            this.otp_send_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.otp_send_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.otp_send_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.otp_send_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -640,6 +645,7 @@
             this.search_btn.BackColor = System.Drawing.Color.Transparent;
             this.search_btn.BorderColor = System.Drawing.Color.IndianRed;
             this.search_btn.BorderRadius = 10;
+            this.search_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.search_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.search_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.search_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -710,6 +716,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(505, 370);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "RecoverPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecoverPassword";

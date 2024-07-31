@@ -120,6 +120,7 @@
             // 
             this.resend_btn.BackColor = System.Drawing.Color.Transparent;
             this.resend_btn.BorderRadius = 15;
+            this.resend_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resend_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.resend_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.resend_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -140,6 +141,7 @@
             // 
             this.verify_btn.BackColor = System.Drawing.Color.Transparent;
             this.verify_btn.BorderRadius = 15;
+            this.verify_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.verify_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.verify_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.verify_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

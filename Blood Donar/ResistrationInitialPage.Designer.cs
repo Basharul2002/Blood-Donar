@@ -38,6 +38,7 @@
             this.sign_up_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sign_up_btn.BackColor = System.Drawing.Color.Transparent;
             this.sign_up_btn.BorderRadius = 20;
+            this.sign_up_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sign_up_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.sign_up_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.sign_up_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

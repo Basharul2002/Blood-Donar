@@ -87,6 +87,7 @@
             this.reset_password.BackColor = System.Drawing.Color.Transparent;
             this.reset_password.BorderColor = System.Drawing.Color.IndianRed;
             this.reset_password.BorderRadius = 10;
+            this.reset_password.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reset_password.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.reset_password.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.reset_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

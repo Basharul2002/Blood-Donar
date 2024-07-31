@@ -59,6 +59,7 @@
             this.sign_in_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sign_in_btn.BackColor = System.Drawing.Color.Transparent;
             this.sign_in_btn.BorderRadius = 20;
+            this.sign_in_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sign_in_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.sign_in_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.sign_in_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

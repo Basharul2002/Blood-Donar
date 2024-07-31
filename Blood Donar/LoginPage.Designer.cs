@@ -91,6 +91,7 @@
             this.login_button.BackColor = System.Drawing.Color.Transparent;
             this.login_button.BorderColor = System.Drawing.Color.Red;
             this.login_button.BorderRadius = 20;
+            this.login_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.login_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.login_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

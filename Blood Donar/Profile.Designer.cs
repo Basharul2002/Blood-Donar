@@ -50,6 +50,7 @@
             this.verify_email = new System.Windows.Forms.LinkLabel();
             this.verify_phone_number = new System.Windows.Forms.LinkLabel();
             this.user_profile_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.change_password_btn = new Guna.UI2.WinForms.Guna2Button();
             this.donar_profile_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.gender_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.city_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,7 +58,6 @@
             this.phone_number_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.email_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.name_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.change_password_btn = new Guna.UI2.WinForms.Guna2Button();
             this.gender_panel.SuspendLayout();
             this.user_profile_panel.SuspendLayout();
             this.donar_profile_panel.SuspendLayout();
@@ -69,7 +69,7 @@
             this.warning_label.BackColor = System.Drawing.Color.Transparent;
             this.warning_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.warning_label.ForeColor = System.Drawing.Color.Red;
-            this.warning_label.Location = new System.Drawing.Point(11, 55);
+            this.warning_label.Location = new System.Drawing.Point(2, 55);
             this.warning_label.Name = "warning_label";
             this.warning_label.Size = new System.Drawing.Size(43, 18);
             this.warning_label.TabIndex = 14;
@@ -81,6 +81,7 @@
             this.update_btn.BackColor = System.Drawing.Color.Transparent;
             this.update_btn.BorderColor = System.Drawing.Color.Red;
             this.update_btn.BorderRadius = 20;
+            this.update_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.update_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.update_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.update_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -89,7 +90,7 @@
             this.update_btn.FillColor = System.Drawing.Color.IndianRed;
             this.update_btn.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F);
             this.update_btn.ForeColor = System.Drawing.Color.White;
-            this.update_btn.Location = new System.Drawing.Point(342, 333);
+            this.update_btn.Location = new System.Drawing.Point(333, 333);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(140, 45);
             this.update_btn.TabIndex = 11;
@@ -102,7 +103,7 @@
             this.sign.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sign.BackColor = System.Drawing.Color.Transparent;
             this.sign.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign.Location = new System.Drawing.Point(298, -129);
+            this.sign.Location = new System.Drawing.Point(289, -129);
             this.sign.Name = "sign";
             this.sign.Size = new System.Drawing.Size(122, 35);
             this.sign.TabIndex = 10;
@@ -121,7 +122,7 @@
             this.name_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.name_tb.ForeColor = System.Drawing.Color.Black;
             this.name_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.name_tb.Location = new System.Drawing.Point(11, 90);
+            this.name_tb.Location = new System.Drawing.Point(2, 90);
             this.name_tb.Name = "name_tb";
             this.name_tb.PasswordChar = '\0';
             this.name_tb.PlaceholderForeColor = System.Drawing.Color.RosyBrown;
@@ -144,7 +145,7 @@
             this.email_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.email_tb.ForeColor = System.Drawing.Color.Black;
             this.email_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email_tb.Location = new System.Drawing.Point(11, 150);
+            this.email_tb.Location = new System.Drawing.Point(2, 150);
             this.email_tb.Name = "email_tb";
             this.email_tb.PasswordChar = '\0';
             this.email_tb.PlaceholderForeColor = System.Drawing.Color.RosyBrown;
@@ -159,7 +160,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(381, 55);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(372, 55);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(101, 18);
             this.guna2HtmlLabel2.TabIndex = 18;
@@ -178,7 +179,7 @@
             this.phone_number_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.phone_number_tb.ForeColor = System.Drawing.Color.Black;
             this.phone_number_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.phone_number_tb.Location = new System.Drawing.Point(381, 79);
+            this.phone_number_tb.Location = new System.Drawing.Point(372, 79);
             this.phone_number_tb.Name = "phone_number_tb";
             this.phone_number_tb.PasswordChar = '\0';
             this.phone_number_tb.PlaceholderForeColor = System.Drawing.Color.RosyBrown;
@@ -193,7 +194,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(11, 212);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(2, 212);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(31, 18);
             this.guna2HtmlLabel3.TabIndex = 20;
@@ -212,7 +213,7 @@
             this.city_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.city_tb.ForeColor = System.Drawing.Color.Black;
             this.city_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.city_tb.Location = new System.Drawing.Point(11, 236);
+            this.city_tb.Location = new System.Drawing.Point(2, 236);
             this.city_tb.Name = "city_tb";
             this.city_tb.PasswordChar = '\0';
             this.city_tb.PlaceholderForeColor = System.Drawing.Color.RosyBrown;
@@ -244,7 +245,7 @@
             "O+",
             "O-",
             "Golden"});
-            this.blood_group_cb.Location = new System.Drawing.Point(381, 167);
+            this.blood_group_cb.Location = new System.Drawing.Point(372, 167);
             this.blood_group_cb.Name = "blood_group_cb";
             this.blood_group_cb.Size = new System.Drawing.Size(144, 36);
             this.blood_group_cb.StartIndex = 0;
@@ -256,7 +257,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(381, 143);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(372, 143);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(84, 18);
             this.guna2HtmlLabel5.TabIndex = 14;
@@ -268,7 +269,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(381, 214);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(372, 214);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(51, 18);
             this.guna2HtmlLabel6.TabIndex = 14;
@@ -280,7 +281,7 @@
             this.gender_panel.Controls.Add(this.others_btn);
             this.gender_panel.Controls.Add(this.female_btn);
             this.gender_panel.Controls.Add(this.male_btn);
-            this.gender_panel.Location = new System.Drawing.Point(381, 236);
+            this.gender_panel.Location = new System.Drawing.Point(372, 236);
             this.gender_panel.Name = "gender_panel";
             this.gender_panel.Size = new System.Drawing.Size(314, 25);
             this.gender_panel.TabIndex = 23;
@@ -336,7 +337,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(11, 127);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(2, 127);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(38, 17);
             this.guna2HtmlLabel1.TabIndex = 16;
@@ -350,7 +351,7 @@
             this.change_phone_number_button.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
             this.change_phone_number_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.change_phone_number_button.LinkColor = System.Drawing.Color.Black;
-            this.change_phone_number_button.Location = new System.Drawing.Point(381, 118);
+            this.change_phone_number_button.Location = new System.Drawing.Point(372, 118);
             this.change_phone_number_button.Name = "change_phone_number_button";
             this.change_phone_number_button.Size = new System.Drawing.Size(155, 15);
             this.change_phone_number_button.TabIndex = 28;
@@ -366,7 +367,7 @@
             this.change_email_button.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
             this.change_email_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.change_email_button.LinkColor = System.Drawing.Color.Black;
-            this.change_email_button.Location = new System.Drawing.Point(10, 189);
+            this.change_email_button.Location = new System.Drawing.Point(1, 189);
             this.change_email_button.Name = "change_email_button";
             this.change_email_button.Size = new System.Drawing.Size(98, 15);
             this.change_email_button.TabIndex = 29;
@@ -383,7 +384,7 @@
             this.verify_email.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
             this.verify_email.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.verify_email.LinkColor = System.Drawing.Color.Black;
-            this.verify_email.Location = new System.Drawing.Point(320, 161);
+            this.verify_email.Location = new System.Drawing.Point(311, 161);
             this.verify_email.Name = "verify_email";
             this.verify_email.Size = new System.Drawing.Size(43, 15);
             this.verify_email.TabIndex = 29;
@@ -399,7 +400,7 @@
             this.verify_phone_number.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
             this.verify_phone_number.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.verify_phone_number.LinkColor = System.Drawing.Color.Black;
-            this.verify_phone_number.Location = new System.Drawing.Point(667, 90);
+            this.verify_phone_number.Location = new System.Drawing.Point(658, 90);
             this.verify_phone_number.Name = "verify_phone_number";
             this.verify_phone_number.Size = new System.Drawing.Size(43, 15);
             this.verify_phone_number.TabIndex = 29;
@@ -431,8 +432,30 @@
             this.user_profile_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.user_profile_panel.Location = new System.Drawing.Point(0, 0);
             this.user_profile_panel.Name = "user_profile_panel";
-            this.user_profile_panel.Size = new System.Drawing.Size(698, 439);
+            this.user_profile_panel.Size = new System.Drawing.Size(681, 439);
             this.user_profile_panel.TabIndex = 30;
+            // 
+            // change_password_btn
+            // 
+            this.change_password_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.change_password_btn.BackColor = System.Drawing.Color.Transparent;
+            this.change_password_btn.BorderColor = System.Drawing.Color.Red;
+            this.change_password_btn.BorderRadius = 20;
+            this.change_password_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.change_password_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.change_password_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.change_password_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.change_password_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.change_password_btn.FillColor = System.Drawing.Color.IndianRed;
+            this.change_password_btn.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10F);
+            this.change_password_btn.ForeColor = System.Drawing.Color.White;
+            this.change_password_btn.Location = new System.Drawing.Point(131, 333);
+            this.change_password_btn.Name = "change_password_btn";
+            this.change_password_btn.Size = new System.Drawing.Size(140, 45);
+            this.change_password_btn.TabIndex = 11;
+            this.change_password_btn.Text = "Change Password";
+            this.change_password_btn.UseTransparentBackground = true;
+            this.change_password_btn.Click += new System.EventHandler(this.change_password_btn_Click);
             // 
             // donar_profile_panel
             // 
@@ -445,7 +468,7 @@
             this.donar_profile_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.donar_profile_panel.Location = new System.Drawing.Point(0, 439);
             this.donar_profile_panel.Name = "donar_profile_panel";
-            this.donar_profile_panel.Size = new System.Drawing.Size(698, 288);
+            this.donar_profile_panel.Size = new System.Drawing.Size(681, 288);
             this.donar_profile_panel.TabIndex = 31;
             // 
             // gender_label
@@ -454,7 +477,7 @@
             this.gender_label.BackColor = System.Drawing.Color.Transparent;
             this.gender_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.gender_label.ForeColor = System.Drawing.Color.Red;
-            this.gender_label.Location = new System.Drawing.Point(11, 222);
+            this.gender_label.Location = new System.Drawing.Point(2, 222);
             this.gender_label.Name = "gender_label";
             this.gender_label.Size = new System.Drawing.Size(51, 18);
             this.gender_label.TabIndex = 15;
@@ -466,7 +489,7 @@
             this.city_label.BackColor = System.Drawing.Color.Transparent;
             this.city_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.city_label.ForeColor = System.Drawing.Color.Red;
-            this.city_label.Location = new System.Drawing.Point(11, 181);
+            this.city_label.Location = new System.Drawing.Point(2, 181);
             this.city_label.Name = "city_label";
             this.city_label.Size = new System.Drawing.Size(31, 18);
             this.city_label.TabIndex = 15;
@@ -478,7 +501,7 @@
             this.blood_group_label.BackColor = System.Drawing.Color.Transparent;
             this.blood_group_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.blood_group_label.ForeColor = System.Drawing.Color.Red;
-            this.blood_group_label.Location = new System.Drawing.Point(11, 140);
+            this.blood_group_label.Location = new System.Drawing.Point(2, 140);
             this.blood_group_label.Name = "blood_group_label";
             this.blood_group_label.Size = new System.Drawing.Size(88, 18);
             this.blood_group_label.TabIndex = 15;
@@ -490,7 +513,7 @@
             this.phone_number_label.BackColor = System.Drawing.Color.Transparent;
             this.phone_number_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.phone_number_label.ForeColor = System.Drawing.Color.Red;
-            this.phone_number_label.Location = new System.Drawing.Point(11, 103);
+            this.phone_number_label.Location = new System.Drawing.Point(2, 103);
             this.phone_number_label.Name = "phone_number_label";
             this.phone_number_label.Size = new System.Drawing.Size(105, 18);
             this.phone_number_label.TabIndex = 15;
@@ -502,7 +525,7 @@
             this.email_label.BackColor = System.Drawing.Color.Transparent;
             this.email_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.email_label.ForeColor = System.Drawing.Color.Red;
-            this.email_label.Location = new System.Drawing.Point(11, 68);
+            this.email_label.Location = new System.Drawing.Point(2, 68);
             this.email_label.Name = "email_label";
             this.email_label.Size = new System.Drawing.Size(41, 18);
             this.email_label.TabIndex = 15;
@@ -514,32 +537,11 @@
             this.name_label.BackColor = System.Drawing.Color.Transparent;
             this.name_label.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.name_label.ForeColor = System.Drawing.Color.Red;
-            this.name_label.Location = new System.Drawing.Point(11, 30);
+            this.name_label.Location = new System.Drawing.Point(2, 30);
             this.name_label.Name = "name_label";
             this.name_label.Size = new System.Drawing.Size(43, 18);
             this.name_label.TabIndex = 15;
             this.name_label.Text = "Name";
-            // 
-            // change_password_btn
-            // 
-            this.change_password_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.change_password_btn.BackColor = System.Drawing.Color.Transparent;
-            this.change_password_btn.BorderColor = System.Drawing.Color.Red;
-            this.change_password_btn.BorderRadius = 20;
-            this.change_password_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.change_password_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.change_password_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.change_password_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.change_password_btn.FillColor = System.Drawing.Color.IndianRed;
-            this.change_password_btn.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10F);
-            this.change_password_btn.ForeColor = System.Drawing.Color.White;
-            this.change_password_btn.Location = new System.Drawing.Point(140, 333);
-            this.change_password_btn.Name = "change_password_btn";
-            this.change_password_btn.Size = new System.Drawing.Size(140, 45);
-            this.change_password_btn.TabIndex = 11;
-            this.change_password_btn.Text = "Change Password";
-            this.change_password_btn.UseTransparentBackground = true;
-            this.change_password_btn.Click += new System.EventHandler(this.change_password_btn_Click);
             // 
             // Profile
             // 
@@ -549,7 +551,7 @@
             this.Controls.Add(this.donar_profile_panel);
             this.Controls.Add(this.user_profile_panel);
             this.Name = "Profile";
-            this.Size = new System.Drawing.Size(698, 499);
+            this.Size = new System.Drawing.Size(681, 499);
             this.gender_panel.ResumeLayout(false);
             this.gender_panel.PerformLayout();
             this.user_profile_panel.ResumeLayout(false);

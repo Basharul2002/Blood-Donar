@@ -235,6 +235,7 @@
             // 
             this.sign_in_btn.BackColor = System.Drawing.Color.Transparent;
             this.sign_in_btn.BorderRadius = 15;
+            this.sign_in_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sign_in_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.sign_in_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.sign_in_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -324,7 +325,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 885);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(385, 24);
+            this.guna2Panel1.Size = new System.Drawing.Size(368, 24);
             this.guna2Panel1.TabIndex = 6;
             // 
             // name_warning_label
@@ -415,6 +416,7 @@
             // 
             this.clear_btn.BackColor = System.Drawing.Color.Transparent;
             this.clear_btn.BorderRadius = 15;
+            this.clear_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clear_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.clear_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.clear_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -585,7 +587,7 @@
             this.Controls.Add(this.name);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "ResistrationForm";
-            this.Size = new System.Drawing.Size(385, 433);
+            this.Size = new System.Drawing.Size(368, 433);
             this.Load += new System.EventHandler(this.ResistrationForm_Load);
             this.gender_panel.ResumeLayout(false);
             this.gender_panel.PerformLayout();

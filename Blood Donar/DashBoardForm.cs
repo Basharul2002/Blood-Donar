@@ -71,5 +71,10 @@ namespace Blood_Donar
             profile.Dock = DockStyle.Fill;
             Instance.panelContainer.Controls.Add(profile);
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

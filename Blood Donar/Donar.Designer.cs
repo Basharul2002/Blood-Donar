@@ -31,11 +31,11 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.blood_group_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.search_btn = new Guna.UI2.WinForms.Guna2Button();
             this.city_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.search_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.blood_group_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.result_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -73,41 +73,22 @@
             this.guna2Panel2.Size = new System.Drawing.Size(800, 51);
             this.guna2Panel2.TabIndex = 1;
             // 
-            // blood_group_cb
+            // search_btn
             // 
-            this.blood_group_cb.BackColor = System.Drawing.Color.Transparent;
-            this.blood_group_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.blood_group_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.blood_group_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.blood_group_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.blood_group_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.blood_group_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.blood_group_cb.ItemHeight = 30;
-            this.blood_group_cb.Items.AddRange(new object[] {
-            "",
-            "A+",
-            "A-",
-            "B+",
-            "B-",
-            "AB+",
-            "AB-",
-            "O+",
-            "O-",
-            "Golden Blood"});
-            this.blood_group_cb.Location = new System.Drawing.Point(128, 6);
-            this.blood_group_cb.Name = "blood_group_cb";
-            this.blood_group_cb.Size = new System.Drawing.Size(76, 36);
-            this.blood_group_cb.TabIndex = 0;
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 16);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(84, 18);
-            this.guna2HtmlLabel2.TabIndex = 1;
-            this.guna2HtmlLabel2.Text = "Blood Group";
+            this.search_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.search_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.search_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.search_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.search_btn.FillColor = System.Drawing.Color.Transparent;
+            this.search_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.search_btn.ForeColor = System.Drawing.Color.Green;
+            this.search_btn.Image = global::Blood_Donar.Properties.Resources.search;
+            this.search_btn.Location = new System.Drawing.Point(569, 6);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(48, 36);
+            this.search_btn.TabIndex = 3;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // city_tb
             // 
@@ -138,21 +119,41 @@
             this.guna2HtmlLabel4.TabIndex = 1;
             this.guna2HtmlLabel4.Text = "City";
             // 
-            // search_btn
+            // guna2HtmlLabel2
             // 
-            this.search_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.search_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.search_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.search_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.search_btn.FillColor = System.Drawing.Color.Transparent;
-            this.search_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.search_btn.ForeColor = System.Drawing.Color.Green;
-            this.search_btn.Location = new System.Drawing.Point(615, 6);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(48, 36);
-            this.search_btn.TabIndex = 3;
-            this.search_btn.Text = "Search";
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 16);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(84, 18);
+            this.guna2HtmlLabel2.TabIndex = 1;
+            this.guna2HtmlLabel2.Text = "Blood Group";
+            // 
+            // blood_group_cb
+            // 
+            this.blood_group_cb.BackColor = System.Drawing.Color.Transparent;
+            this.blood_group_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.blood_group_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.blood_group_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.blood_group_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.blood_group_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.blood_group_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.blood_group_cb.ItemHeight = 30;
+            this.blood_group_cb.Items.AddRange(new object[] {
+            "",
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-",
+            "Golden Blood"});
+            this.blood_group_cb.Location = new System.Drawing.Point(128, 6);
+            this.blood_group_cb.Name = "blood_group_cb";
+            this.blood_group_cb.Size = new System.Drawing.Size(76, 36);
+            this.blood_group_cb.TabIndex = 0;
             // 
             // result_panel
             // 

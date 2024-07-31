@@ -63,6 +63,7 @@
             // donar_btn
             // 
             this.donar_btn.BackColor = System.Drawing.Color.Transparent;
+            this.donar_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.donar_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.donar_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.donar_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -82,6 +83,7 @@
             // guna2Button2
             // 
             this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -96,6 +98,7 @@
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "Messages";
             this.guna2Button2.UseTransparentBackground = true;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -121,6 +124,7 @@
             // guna2Button1
             // 
             this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -160,6 +164,7 @@
             // profile_btn
             // 
             this.profile_btn.BackColor = System.Drawing.Color.Transparent;
+            this.profile_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.profile_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.profile_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.profile_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -184,6 +189,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.data_panel);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "DashBoardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashBoard";

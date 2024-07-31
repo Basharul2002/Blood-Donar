@@ -326,6 +326,7 @@
             // 
             this.email_add_btn.BackColor = System.Drawing.Color.Transparent;
             this.email_add_btn.BorderRadius = 15;
+            this.email_add_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.email_add_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.email_add_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.email_add_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
